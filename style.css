@@ -133,4 +133,55 @@ a {
     color: #0078ff;
     text-decoration: none;
     transition: color 0.2s ease, text-decoration-color 0.2s ease;
-    text-decoration-color: transparent
+    text-decoration-color: transparent;
+}
+
+a:hover {
+    color: #005fcc;
+    text-decoration: underline;
+    text-decoration-color: #005fcc;
+}
+
+/* ===========================
+   画像（技術ドヤ：カード浮き上がり）
+=========================== */
+img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 6px;
+}
+
+img:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* ===========================
+   フッター
+=========================== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #f0f0f0;
+}
+
+/* ===========================
+   アニメーション定義
+=========================== */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideLine {
+    to {
+        left: 0;
+    }
+}
+
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
