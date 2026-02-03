@@ -1,15 +1,20 @@
+/* 全体の基本設定 */
 body {
     font-family: sans-serif;
     line-height: 1.8;
     margin: 0;
     padding: 0;
     color: #333;
+    background: #ffffff;
 }
 
+/* ヒーロー部分（トップ） */
 .hero {
     background: #eef6ff;
     padding: 60px 20px;
     text-align: center;
+    opacity: 0;
+    animation: fadeIn 0.3s ease-out forwards;
 }
 
 .cta {
@@ -22,19 +27,43 @@ body {
     border-radius: 6px;
 }
 
+/* セクション共通 */
 section {
     padding: 40px 20px;
     max-width: 800px;
     margin: auto;
+
+    /* 控えめアニメーション */
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeIn 0.2s ease-out forwards;
 }
 
+/* セクションごとに少し遅延をつけると自然 */
+section:nth-of-type(1) { animation-delay: 0.1s; }
+section:nth-of-type(2) { animation-delay: 0.2s; }
+section:nth-of-type(3) { animation-delay: 0.3s; }
+section:nth-of-type(4) { animation-delay: 0.4s; }
+section:nth-of-type(5) { animation-delay: 0.5s; }
+section:nth-of-type(6) { animation-delay: 0.6s; }
+
+/* 見出し */
 h2 {
     margin-bottom: 20px;
     color: #0055aa;
 }
 
+/* フッター */
 footer {
     text-align: center;
     padding: 20px;
     background: #f0f0f0;
+}
+
+/* アニメーション定義 */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
