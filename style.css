@@ -41,6 +41,7 @@ html {
 
 .cta:hover {
     transform: translateY(-2px);
+    color: white; /* ← 文字色固定 */
 }
 
 .cta:active {
@@ -48,22 +49,23 @@ html {
 }
 
 /* ===========================
-   セクション（勝手スクロール停止済み）
+   セクション（勝手スクロール完全停止）
 =========================== */
 section {
     padding: 40px 20px;
     max-width: 800px;
     margin: auto;
 
-    /* フェードインだけ */
     opacity: 0;
     transform: translateY(20px);
-    animation: fadeIn 0.4s ease-out forwards;
 
-    /* 背景アニメは別で動かす（スクロールに干渉しない） */
+    /* fadeIn と bgMove を正しく共存させる */
+    animation:
+        fadeIn 0.4s ease-out forwards,
+        bgMove 6s ease infinite;
+
     background: linear-gradient(120deg, #ffffff, #f7fbff);
     background-size: 200% 200%;
-    animation: bgMove 6s ease infinite;
 
     border-radius: 8px;
     box-shadow: 0 0 0 rgba(0,0,0,0);
@@ -75,13 +77,13 @@ section:hover {
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-/* 遅延（fadeIn のみ適用） */
-section:nth-of-type(1) { animation-delay: 0.1s; }
-section:nth-of-type(2) { animation-delay: 0.3s; }
-section:nth-of-type(3) { animation-delay: 0.5s; }
-section:nth-of-type(4) { animation-delay: 0.7s; }
-section:nth-of-type(5) { animation-delay: 0.9s; }
-section:nth-of-type(6) { animation-delay: 1.1s; }
+/* 遅延（fadeIn のみ適用される） */
+section:nth-of-type(1) { animation-delay: 0.1s, 0s; }
+section:nth-of-type(2) { animation-delay: 0.3s, 0s; }
+section:nth-of-type(3) { animation-delay: 0.5s, 0s; }
+section:nth-of-type(4) { animation-delay: 0.7s, 0s; }
+section:nth-of-type(5) { animation-delay: 0.9s, 0s; }
+section:nth-of-type(6) { animation-delay: 1.1s, 0s; }
 
 /* ===========================
    見出し（前のホバー下線アニメに戻す）
