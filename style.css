@@ -41,7 +41,7 @@ html {
     padding: 12px 28px;
     border: 2px solid #ffffff;
     color: #ffffff;
-    text-decoration: none;
+    text-decoration: none; /* ← 通常時の下線を消す */
     border-radius: 6px;
     transition: 0.3s;
 }
@@ -49,6 +49,7 @@ html {
 .cta:hover {
     background: #ffffff;
     color: #0A1A2F;
+    text-decoration: none; /* ← hover時の下線も消す */
 }
 
 
