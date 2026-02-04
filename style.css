@@ -18,34 +18,38 @@ html {
    ヒーロー部分
 =========================== */
 .hero {
-    background: #eef6ff;
-    padding: 60px 20px;
+    background: #faf7f4;
+    color: #0A1A2F; /* 名刺のネイビー */
     text-align: center;
-    opacity: 0;
-    animation: fadeIn 0.3s ease-out forwards;
+    padding: 120px 20px;
 }
 
-/* ===========================
-   CTAボタン（色そのまま、動きだけ）
-=========================== */
+.hero h1 {
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    opacity: 0.85;
+}
+
 .cta {
     display: inline-block;
-    margin-top: 20px;
-    padding: 12px 24px;
-    background: #0078ff;
-    color: white;
+    margin-top: 30px;
+    padding: 12px 28px;
+    background: #0A1A2F; /* ネイビー */
+    color: #fff;
     text-decoration: none;
     border-radius: 6px;
-    transition: transform 0.2s ease;
+    transition: 0.3s;
 }
 
 .cta:hover {
-    transform: translateY(-2px);
-    color: white; /* ← 文字色固定 */
-}
-
-.cta:active {
-    transform: translateY(1px);
+    background: #fff;
+    color: #0A1A2F;
+    border: 2px solid #0A1A2F;
 }
 
 /* ===========================
