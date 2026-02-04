@@ -18,11 +18,18 @@ html {
    ヒーロー部分
 =========================== */
 .hero {
-    background: linear-gradient(135deg, #071426 0%, #0A1A2F 35%, #1E4A7B 100%);
+    background: linear-gradient(
+        to bottom,
+        #071426 0%,
+        #0A1A2F 35%,
+        #15365A 65%,
+        #1E4A7B 100%
+    );
     color: #ffffff;
     text-align: center;
     padding: 140px 20px;
 }
+
 
 .hero h1 {
     font-size: 2.6rem;
