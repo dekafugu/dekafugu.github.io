@@ -18,21 +18,21 @@ html {
    ヒーロー部分
 =========================== */
 .hero {
-    background: linear-gradient(135deg, #0A1A2F 0%, #1C3B5A 100%);
+    background: linear-gradient(135deg, #071426 0%, #0A1A2F 35%, #1E4A7B 100%);
     color: #ffffff;
     text-align: center;
-    padding: 120px 20px;
+    padding: 140px 20px;
 }
 
 .hero h1 {
-    font-size: 2.4rem;
+    font-size: 2.6rem;
     margin-bottom: 20px;
     font-weight: 700;
 }
 
 .hero p {
     font-size: 1.2rem;
-    opacity: 0.9;
+    opacity: 0.95;
 }
 
 .cta {
@@ -50,7 +50,6 @@ html {
     background: #ffffff;
     color: #0A1A2F;
 }
-
 
 
 /* ===========================
