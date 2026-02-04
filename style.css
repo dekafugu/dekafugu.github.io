@@ -32,15 +32,16 @@ html {
     content: "";
     position: absolute;
     inset: 0;
-    z-index: -1; /* ← 背景に固定（これが最重要） */
+    z-index: -1;
     background: repeating-linear-gradient(
         to bottom,
         rgba(255,255,255,0.10) 0px,
-        rgba(255,255,255,0.10) 2px,
-        rgba(255,255,255,0) 22px
+        rgba(255,255,255,0.10) 10px, /* ← 線を太くした */
+        rgba(255,255,255,0) 100px    /* ← 間隔を広げた */
     );
     pointer-events: none;
 }
+
 
 
 
