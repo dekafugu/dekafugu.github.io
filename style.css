@@ -22,17 +22,17 @@ html {
     z-index: 0;
     background: linear-gradient(to bottom, #071426, #1E4A7B);
     color: #fff;
+    text-align: center; /* ← 中央揃えを明示 */
     padding: 140px 20px;
-    overflow: hidden; /* ← これ重要 */
+    overflow: hidden;
 }
 
-/* Photon風の段々（絶対にレイアウト崩れない版） */
+/* Photon風の段々（安定版） */
 .hero::before {
     content: "";
     position: absolute;
-    inset: 0; /* top:0; left:0; width:100%; height:100%; と同じ */
-    z-index: -1; /* ← 背景に固定 */
-    display: block; /* ← 高さを持たせない */
+    inset: 0;
+    z-index: -1; /* ← 背景に固定（これが最重要） */
     background: repeating-linear-gradient(
         to bottom,
         rgba(255,255,255,0.10) 0px,
@@ -41,6 +41,7 @@ html {
     );
     pointer-events: none;
 }
+
 
 
 .hero h1 {
