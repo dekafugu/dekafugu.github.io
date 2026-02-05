@@ -160,6 +160,17 @@ section:nth-of-type(4) { animation-delay: 0.7s, 0s; }
 section:nth-of-type(5) { animation-delay: 0.9s, 0s; }
 section:nth-of-type(6) { animation-delay: 1.1s, 0s; }
 
+section:nth-of-type(odd) {
+    background: linear-gradient(120deg, #ffffff, #f7fbff);
+    color: #222;
+}
+
+section:nth-of-type(even) {
+    background: linear-gradient(120deg, #e9ecef, #f1f3f5);
+    color: #111;
+}
+
+
 /* ===========================
    見出し（前のホバー下線アニメに戻す）
 =========================== */
@@ -220,9 +231,15 @@ img:hover {
 =========================== */
 footer {
     text-align: center;
-    padding: 20px;
-    background: #f0f0f0;
+    padding: 30px;
+    background: linear-gradient(
+        to bottom,
+        #c2a98a 0%,   /* 茶の明るい部分 */
+        #f7edc4 100%  /* 淡い黄色（光の終点） */
+    );
+    color: #3a2f1e; /* 落ち着いた茶色の文字 */
 }
+
 
 /* ===========================
    アニメーション定義
