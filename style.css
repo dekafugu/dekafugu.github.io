@@ -133,7 +133,7 @@ section:nth-of-type(even) {
 }
 
 section:hover {
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    box-shadow: none;
 }
 
 /* ===========================
@@ -302,3 +302,25 @@ footer::after {
         max-width: 300px;
     }
 }
+
+/* ぴょんアニメーション */
+@keyframes pyon {
+    0%   { transform: translateY(0); }
+    40%  { transform: translateY(-10px); }
+    60%  { transform: translateY(3px); }
+    80%  { transform: translateY(-4px); }
+    100% { transform: translateY(0); }
+}
+
+/* 通常状態 */
+.two-col .image img {
+    width: 260px;
+    border-radius: 6px;
+    transition: transform 0.2s ease;
+}
+
+/* 触ったときに“ぴょん” */
+.two-col .image img:hover {
+    animation: pyon 0.45s ease-out;
+}
+
