@@ -303,12 +303,12 @@ footer::after {
     }
 }
 
-/* ぴょんアニメーション */
+/* 一回だけぴょんと跳ねるアニメーション */
 @keyframes pyon {
     0%   { transform: translateY(0); }
-    40%  { transform: translateY(-10px); }
-    60%  { transform: translateY(3px); }
-    80%  { transform: translateY(-4px); }
+    40%  { transform: translateY(-12px); }
+    65%  { transform: translateY(4px); }
+    85%  { transform: translateY(-3px); }
     100% { transform: translateY(0); }
 }
 
@@ -319,8 +319,8 @@ footer::after {
     transition: transform 0.2s ease;
 }
 
-/* 触ったときに“ぴょん” */
+/* hover した瞬間に1回だけぴょん */
 .two-col .image img:hover {
-    animation: pyon 0.45s ease-out;
+    animation: pyon 0.45s ease-out 1;
 }
 
