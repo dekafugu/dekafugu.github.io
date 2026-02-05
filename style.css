@@ -57,8 +57,8 @@ body {
             to bottom,
             rgba(255,255,255,0.04) 0px,
             rgba(255,255,255,0.04) 10px,
-            rgba(255,255,255,0) 150px,
-            rgba(255,255,255,0.04) 160px
+            rgba(255,255,255,0) 140px,
+            rgba(255,255,255,0.04) 150px
         );
 }
 
@@ -198,18 +198,17 @@ footer {
     position: relative;
     overflow: hidden;
     text-align: center;
-    padding: 200px 20px;
+    padding: 120px 20px;
     color: #ffffff;
     z-index: 0;
 
     background: linear-gradient(
         to bottom,
-        #7ec8e3 0%,   /* 明るい水色 */
-        #5b6aa0 50%, /* 青紫 */
-        #7a6fa3 100% /* 紫（帯が最も映える） */
+        #f7edc4 0%,   /* ← ヘッダー最下部の色（必須） */
+        #7ec8e3 45%,  /* ← 水色（帯が見える） */
+        #7a6fa3 100%  /* ← 紫（帯が最も映える） */
     );
 }
-
 
 footer::before {
     content: "";
@@ -233,8 +232,8 @@ footer::before {
             to bottom,
             rgba(255,255,255,0.04) 0px,
             rgba(255,255,255,0.04) 10px,
-            rgba(255,255,255,0) 150px,
-            rgba(255,255,255,0.04) 160px
+            rgba(255,255,255,0) 140px,
+            rgba(255,255,255,0.04) 150px
         );
 }
 
