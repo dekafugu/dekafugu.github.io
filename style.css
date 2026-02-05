@@ -227,14 +227,17 @@ img:hover {
 =========================== */
 footer {
     text-align: center;
-    padding: 30px;
+    padding: 60px 20px; /* ← 高さ大きめ */
+    color: #ffffff;
+
     background: linear-gradient(
         to bottom,
-        #c2a98a 0%,   /* 茶の明るい部分 */
-        #f7edc4 100%  /* 淡い黄色（光の終点） */
+        #f7edc4 0%,   /* ヘッダー最下部の淡黄色 */
+        #f5a45b 40%,  /* 柔らかいオレンジ */
+        #7ec8e3 100%  /* 爽やかな水色 */
     );
-    color: #3a2f1e; /* 落ち着いた茶色の文字 */
 }
+
 
 
 /* ===========================
