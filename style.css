@@ -132,8 +132,9 @@ section:nth-of-type(even) {
 }
 
 section:hover {
-    box-shadow: none;
+    background: inherit !important;
 }
+
 
 /* ===========================
    見出し
