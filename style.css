@@ -43,7 +43,6 @@ body {
     pointer-events: none;
 
     background:
-        /* ノイズ */
         url("data:image/svg+xml;utf8,\
 <svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'>\
 <filter id='n'>\
@@ -52,7 +51,6 @@ body {
 <rect width='100%' height='100%' filter='url(#n)' opacity='0.04'/>\
 </svg>"),
 
-        /* 帯 */
         repeating-linear-gradient(
             to bottom,
             rgba(255,255,255,0.04) 0px,
@@ -101,40 +99,35 @@ body {
 .cta:hover {
     background: #ffffff;
     color: #0A1A2F;
-    text-decoration: none;
 }
 
 /* ===========================
-   セクション（アニメーション全削除）
+   セクション
 =========================== */
 section {
     padding: 60px 20px;
     max-width: 800px;
     margin: auto;
 
-    opacity: 1;
-    transform: none;
-
     border-radius: 8px;
-    box-shadow: none
-    border-top: 1px solid rgba(0,0,0,0.05);
+    box-shadow: none !important;
+    background: inherit;
 }
 
 /* 交互背景 */
 section:nth-of-type(odd) {
     background: linear-gradient(120deg, #ffffff, #f7fbff);
-    color: #222;
 }
 
 section:nth-of-type(even) {
     background: linear-gradient(120deg, #e9ecef, #f1f3f5);
-    color: #111;
 }
 
+/* hover しても白くならない */
 section:hover {
     background: inherit !important;
+    box-shadow: none !important;
 }
-
 
 /* ===========================
    見出し
@@ -168,31 +161,83 @@ h2:hover::after {
 a {
     color: #0078ff;
     text-decoration: none;
-    transition: color 0.2s ease, text-decoration-color 0.2s ease;
-    text-decoration-color: transparent;
+    transition: color 0.2s ease;
 }
 
 a:hover {
     color: #005fcc;
     text-decoration: underline;
-    text-decoration-color: #005fcc;
 }
 
 /* ===========================
-   画像
+   グローバル画像 hover 無効化
 =========================== */
-img {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 6px;
-}
-
 img:hover {
-    transform: translateY(-4px) scale(1.03);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transform: none !important;
+    box-shadow: none !important;
 }
 
 /* ===========================
-   フッター（2倍高さ＋帯＋ノイズ＋光）
+   文章＋画像の2カラム
+=========================== */
+.two-col {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.two-col.reverse {
+    flex-direction: row-reverse;
+}
+
+.two-col .text {
+    flex: 1;
+}
+
+.two-col .text p,
+.two-col .text li {
+    line-height: 1.9;
+    margin-bottom: 12px;
+}
+
+/* 通常状態（影なし） */
+.two-col .image img {
+    width: 260px;
+    border-radius: 6px;
+    box-shadow: none !important;
+    transition: transform 0.2s ease;
+}
+
+/* ぴょんアニメ */
+@keyframes pyon {
+    0%   { transform: translateY(0); }
+    40%  { transform: translateY(-12px); }
+    65%  { transform: translateY(4px); }
+    85%  { transform: translateY(-3px); }
+    100% { transform: translateY(0); }
+}
+
+/* hover した瞬間だけ1回ぴょん */
+.two-col .image img:hover {
+    animation: pyon 0.45s ease-out 1;
+}
+
+/* スマホ */
+@media (max-width: 700px) {
+    .two-col,
+    .two-col.reverse {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .two-col .image img {
+        width: 80%;
+        max-width: 300px;
+    }
+}
+
+/* ===========================
+   フッター
 =========================== */
 footer {
     position: relative;
@@ -200,13 +245,12 @@ footer {
     text-align: center;
     padding: 240px 20px 50px;
     color: #ffffff;
-    z-index: 0;
 
     background: linear-gradient(
         to bottom,
-        #f7edc4 0%,   /* ← ヘッダー最下部の色（必須） */
-        #7ec8e3 45%,  /* ← 水色（帯が見える） */
-        #7a6fa3 80%  /* ← 紫（帯が最も映える） */
+        #f7edc4 0%,
+        #7ec8e3 45%,
+        #7a6fa3 80%
     );
 }
 
@@ -215,10 +259,8 @@ footer::before {
     position: absolute;
     inset: 0;
     z-index: -1;
-    pointer-events: none;
 
     background:
-        /* ノイズ */
         url("data:image/svg+xml;utf8,\
 <svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'>\
 <filter id='n'>\
@@ -227,7 +269,6 @@ footer::before {
 <rect width='100%' height='100%' filter='url(#n)' opacity='0.04'/>\
 </svg>"),
 
-        /* 帯 */
         repeating-linear-gradient(
             to bottom,
             rgba(255,255,255,0.05) 0px,
@@ -242,7 +283,6 @@ footer::after {
     position: absolute;
     inset: 0;
     z-index: -2;
-    pointer-events: none;
 
     background: linear-gradient(
         to bottom,
@@ -250,72 +290,3 @@ footer::after {
         rgba(255,255,255,0) 40%
     );
 }
-
-/* ===========================
-   文章＋画像の2カラムレイアウト
-=========================== */
-
-.two-col {
-    display: flex;
-    gap: 30px;
-    align-items: flex-start;
-}
-
-.two-col .text {
-    flex: 1;
-}
-
-/* 画像の通常状態 */
-.two-col .image img {
-    width: 260px;
-    border-radius: 6px;
-    transition: transform 0.25s ease;
-}
-
-
-/* 画像を左に置きたいとき */
-.two-col.reverse {
-    flex-direction: row-reverse;
-}
-
-.two-col .text p,
-.two-col .text li {
-    line-height: 1.9;
-    margin-bottom: 12px;
-}
-
-/* スマホでは縦並びに */
-@media (max-width: 700px) {
-    .two-col,
-    .two-col.reverse {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .two-col .image img {
-        width: 80%;
-        max-width: 300px;
-    }
-}
-
-/* 一回だけぴょんと跳ねるアニメーション */
-@keyframes pyon {
-    0%   { transform: translateY(0); }
-    40%  { transform: translateY(-12px); }
-    65%  { transform: translateY(4px); }
-    85%  { transform: translateY(-3px); }
-    100% { transform: translateY(0); }
-}
-
-/* 通常状態 */
-.two-col .image img {
-    width: 260px;
-    border-radius: 6px;
-    transition: transform 0.2s ease;
-}
-
-/* hover した瞬間に1回だけぴょん */
-.two-col .image img:hover {
-    animation: pyon 0.45s ease-out 1;
-}
-
