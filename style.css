@@ -111,7 +111,6 @@ section {
 
     border-radius: 8px;
     box-shadow: none !important;
-    background: inherit;
 }
 
 /* 交互背景 */
@@ -123,7 +122,7 @@ section:nth-of-type(even) {
     background: linear-gradient(120deg, #e9ecef, #f1f3f5);
 }
 
-/* hover しても白くならない */
+/* hover しても絶対に白くならない */
 section:hover {
     background: inherit !important;
     box-shadow: none !important;
@@ -200,12 +199,12 @@ img:hover {
     margin-bottom: 12px;
 }
 
-/* 通常状態（影なし） */
+/* 通常状態（影なし・transformなし） */
 .two-col .image img {
     width: 260px;
     border-radius: 6px;
     box-shadow: none !important;
-    transition: transform 0.2s ease;
+    transition: none; /* ← これが“ぴょん1回”の鍵 */
 }
 
 /* ぴょんアニメ */
