@@ -198,14 +198,14 @@ footer {
     position: relative;
     overflow: hidden;
     text-align: center;
-    padding: 120px 20px;
+    padding: 200px 20px 40px;
     color: #ffffff;
     z-index: 0;
 
     background: linear-gradient(
         to bottom,
         #f7edc4 0%,   /* ← ヘッダー最下部の色（必須） */
-        #7ec8e3 45%,  /* ← 水色（帯が見える） */
+        #7ec8e3 65%,  /* ← 水色（帯が見える） */
         #7a6fa3 100%  /* ← 紫（帯が最も映える） */
     );
 }
