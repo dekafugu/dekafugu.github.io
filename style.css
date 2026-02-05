@@ -134,10 +134,7 @@ section {
     opacity: 0;
     transform: translateY(20px);
 
-    /* fadeIn と bgMove を正しく共存させる */
-    animation:
-        fadeIn 0.4s ease-out forwards,
-        bgMove 6s ease infinite;
+    animation: fadeIn 0.4s ease-out forwards;
 
     background: linear-gradient(120deg, #ffffff, #f7fbff);
     background-size: 200% 200%;
@@ -147,6 +144,7 @@ section {
     transition: box-shadow 0.4s ease;
     border-top: 1px solid rgba(0,0,0,0.05);
 }
+
 
 section:hover {
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
