@@ -20,35 +20,34 @@ html {
 .hero {
     position: relative;
     z-index: 0;
-   background: linear-gradient(
-       to bottom,
-   
-       /* さわやかな青（明るめ） */
-       #1e3a5f 0%,      /* 明るいネイビー寄りの青 */
-       #2a4d78 15%,     /* 透明感のある青 */
-   
-       /* 青紫（明るめ） */
-       #4a5c8a 30%,     /* 青紫の中間 */
-       #5b6aa0 45%,     /* 少し明るい青紫 */
-   
-       /* 紫（明るめ） */
-       #7a6fa3 60%,     /* くすみ紫の明るい版 */
-       #9a8bb8 70%,     /* 柔らかいラベンダー寄り */
-   
-       /* 茶（明るめ） */
-       #c2a98a 82%,     /* くすみベージュ寄りの茶 */
-   
-       /* 黄色（明るめ） */
-       #f7edc4 100%     /* 柔らかい淡黄色（光の終点） */
-   );
 
+    background: linear-gradient(
+        to bottom,
+
+        /* さわやかな青（明るめ） */
+        #1e3a5f 0%,
+        #2a4d78 15%,
+
+        /* 青紫（明るめ） */
+        #4a5c8a 30%,
+        #5b6aa0 45%,
+
+        /* 紫（明るめ） */
+        #7a6fa3 60%,
+        #9a8bb8 70%,
+
+        /* 茶（明るめ） */
+        #c2a98a 82%,
+
+        /* 黄色（明るめ） */
+        #f7edc4 100%
+    );
 
     color: #fff;
     text-align: center;
     padding: 140px 20px;
     overflow: hidden;
 }
-
 
 .hero::before {
     content: "";
@@ -69,14 +68,13 @@ html {
 
         /* 太い帯 */
         repeating-linear-gradient(
-          to bottom,
-          rgba(255,255,255,0.04) 0px,
-          rgba(255,255,255,0.04) 10px, /* ← 帯の太さ */
-          rgba(255,255,255,0) 150px,    /* ← 帯の周期（太さ＋間隔） */
-           rgba(255,255,255,0.04) 160px
-      );
+            to bottom,
+            rgba(255,255,255,0.04) 0px,
+            rgba(255,255,255,0.04) 10px,
+            rgba(255,255,255,0) 150px,
+            rgba(255,255,255,0.04) 160px
+        );
 }
-
 
 .hero::after {
     content: "";
@@ -91,8 +89,6 @@ html {
         rgba(255,255,255,0) 30%
     );
 }
-
-
 
 .hero h1 {
     font-size: 2.6rem;
@@ -122,7 +118,6 @@ html {
     text-decoration: none;
 }
 
-
 /* ===========================
    セクション（勝手スクロール完全停止）
 =========================== */
@@ -134,28 +129,23 @@ section {
     opacity: 0;
     transform: translateY(20px);
 
-    background: linear-gradient(120deg, #ffffff, #f7fbff);
-    background-size: 200% 200%;
-
     border-radius: 8px;
     box-shadow: 0 0 0 rgba(0,0,0,0);
     transition: box-shadow 0.4s ease;
     border-top: 1px solid rgba(0,0,0,0.05);
+
+    animation: fadeIn 0.4s ease-out forwards;
 }
 
+/* 遅延（fadeIn のみ） */
+section:nth-of-type(1) { animation-delay: 0.1s; }
+section:nth-of-type(2) { animation-delay: 0.3s; }
+section:nth-of-type(3) { animation-delay: 0.5s; }
+section:nth-of-type(4) { animation-delay: 0.7s; }
+section:nth-of-type(5) { animation-delay: 0.9s; }
+section:nth-of-type(6) { animation-delay: 1.1s; }
 
-section:hover {
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-/* 遅延（fadeIn のみ適用される） */
-section:nth-of-type(1) { animation-delay: 0.1s, 0s; }
-section:nth-of-type(2) { animation-delay: 0.3s, 0s; }
-section:nth-of-type(3) { animation-delay: 0.5s, 0s; }
-section:nth-of-type(4) { animation-delay: 0.7s, 0s; }
-section:nth-of-type(5) { animation-delay: 0.9s, 0s; }
-section:nth-of-type(6) { animation-delay: 1.1s, 0s; }
-
+/* 交互背景 */
 section:nth-of-type(odd) {
     background: linear-gradient(120deg, #ffffff, #f7fbff);
     color: #222;
@@ -166,9 +156,12 @@ section:nth-of-type(even) {
     color: #111;
 }
 
+section:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
 
 /* ===========================
-   見出し（前のホバー下線アニメに戻す）
+   見出し
 =========================== */
 h2 {
     position: relative;
@@ -210,7 +203,7 @@ a:hover {
 }
 
 /* ===========================
-   画像（軽い浮き上がり）
+   画像
 =========================== */
 img {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -223,22 +216,20 @@ img:hover {
 }
 
 /* ===========================
-   フッター
+   フッター（2倍の高さ）
 =========================== */
 footer {
     text-align: center;
-    padding: 60px 20px; /* ← 高さ大きめ */
+    padding: 120px 20px;
     color: #ffffff;
 
     background: linear-gradient(
         to bottom,
-        #f7edc4 0%,   /* ヘッダー最下部の淡黄色 */
-        #f5a45b 40%,  /* 柔らかいオレンジ */
-        #7ec8e3 100%  /* 爽やかな水色 */
+        #f7edc4 0%,
+        #f5a45b 40%,
+        #7ec8e3 100%
     );
 }
-
-
 
 /* ===========================
    アニメーション定義
@@ -248,10 +239,4 @@ footer {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-@keyframes bgMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
 }
