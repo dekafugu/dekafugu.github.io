@@ -56,7 +56,7 @@ body {
         repeating-linear-gradient(
             to bottom,
             rgba(255,255,255,0.04) 0px,
-            rgba(255,255,255,0.04) 10px,
+            rgba(255,255,255,0.04) 20px,
             rgba(255,255,255,0) 140px,
             rgba(255,255,255,0.04) 150px
         );
@@ -198,7 +198,7 @@ footer {
     position: relative;
     overflow: hidden;
     text-align: center;
-    padding: 280px 20px 50px;
+    padding: 240px 20px 50px;
     color: #ffffff;
     z-index: 0;
 
@@ -231,7 +231,7 @@ footer::before {
         repeating-linear-gradient(
             to bottom,
             rgba(255,255,255,0.05) 0px,
-            rgba(255,255,255,0.05) 10px,
+            rgba(255,255,255,0.05) 20px,
             rgba(255,255,255,0) 140px,
             rgba(255,255,255,0.05) 150px
         );
