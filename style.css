@@ -272,11 +272,6 @@ footer::after {
     transition: transform 0.25s ease;
 }
 
-/* 触ったときにぴょんっと跳ねる */
-.two-col .image img:hover {
-    transform: translateY(-6px); /* ← 上に6px跳ねる */
-}
-
 
 /* 画像を左に置きたいとき */
 .two-col.reverse {
