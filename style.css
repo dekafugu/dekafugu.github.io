@@ -252,7 +252,7 @@ footer::after {
 }
 
 /* ===========================
-   文章左・画像右の2カラム
+   文章＋画像の2カラムレイアウト
 =========================== */
 
 .two-col {
@@ -266,14 +266,20 @@ footer::after {
 }
 
 .two-col .image img {
-    width: 260px;      /* ← 大きさ統一 */
+    width: 260px;   /* ← 大きさ統一 */
     border-radius: 6px;
     display: block;
 }
 
+/* 画像を左に置きたいとき */
+.two-col.reverse {
+    flex-direction: row-reverse;
+}
+
 /* スマホでは縦並びに */
 @media (max-width: 700px) {
-    .two-col {
+    .two-col,
+    .two-col.reverse {
         flex-direction: column;
         align-items: center;
     }
