@@ -250,3 +250,31 @@ footer::after {
         rgba(255,255,255,0) 40%
     );
 }
+
+/* ===========================
+   画像の左右配置（大きさ統一）
+=========================== */
+
+.img-left {
+    float: left;
+    width: 240px; /* ← 大きさ統一 */
+    margin: 0 20px 20px 0;
+    border-radius: 6px;
+}
+
+.img-right {
+    float: right;
+    width: 240px; /* ← 大きさ統一 */
+    margin: 0 0 20px 20px;
+    border-radius: 6px;
+}
+
+/* スマホでは縦並びに戻す */
+@media (max-width: 700px) {
+    .img-left,
+    .img-right {
+        float: none;
+        display: block;
+        margin: 0 auto 20px;
+    }
+}
