@@ -204,6 +204,7 @@ footer {
     text-align: center;
     padding: 120px 20px;
     color: #ffffff;
+   z-index: 0;
 
     background: linear-gradient(
         to bottom,
