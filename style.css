@@ -18,13 +18,19 @@ html {
    ヒーロー部分
 =========================== */
 .hero {
+    position: relative;   /* ← これが必須 */
+    z-index: 0;
     background: linear-gradient(
         to bottom,
-        #071426 0%,   /* 濃いネイビー */
-        #1E4A7B 40%,  /* 明るいネイビー */
-        #ffffff 70%,  /* 白 */
-        #f5e9d6 100%  /* ベージュ（柔らかい光） */
+        #071426 0%,
+        #1E4A7B 40%,
+        #ffffff 70%,
+        #f5e9d6 100%
     );
+    color: #fff;
+    text-align: center;
+    padding: 140px 20px;
+    overflow: hidden;
 }
 
 .hero::before {
