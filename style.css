@@ -124,7 +124,7 @@ section:nth-of-type(even) {
 
 /* hover しても絶対に白くならない */
 section:hover {
-    background: inherit !important;
+    background: none !important;
     box-shadow: none !important;
 }
 
