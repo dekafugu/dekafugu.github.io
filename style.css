@@ -18,32 +18,29 @@ html {
    ヒーロー部分
 =========================== */
 .hero {
-    position: relative;   /* ← これが必須 */
+    position: relative;
     z-index: 0;
-.hero {
-    position: relative;   /* ← これが必須 */
-    z-index: 0;
-   background: linear-gradient(
-       to bottom,
-   
-       /* 冷たい青（くすみ） */
-       #0d1b2a 0%,      /* ほぼ黒に近い青みネイビー */
-       #1b263b 15%,     /* くすんだ深青 */
-   
-       /* 青紫（くすみ） */
-       #3a3f5c 30%,     /* 青紫の影 */
-       #4b4f78 45%,     /* くすんだ青紫 */
-   
-       /* 紫（くすみ） */
-       #5e547e 60%,     /* 低彩度の紫 */
-       #7a6a8a 70%,     /* 柔らかい紫の光 */
-   
-       /* 茶（くすみ） */
-       #a68b6d 82%,     /* くすんだ茶色（光の温度が上がる） */
-   
-       /* 黄色（くすみ） */
-       #f2e6b8 100%     /* くすんだ黄色（Photon の“温かい光”） */
-   );
+    background: linear-gradient(
+        to bottom,
+
+        /* 冷たい青（くすみ） */
+        #0d1b2a 0%,
+        #1b263b 15%,
+
+        /* 青紫（くすみ） */
+        #3a3f5c 30%,
+        #4b4f78 45%,
+
+        /* 紫（くすみ） */
+        #5e547e 60%,
+        #7a6a8a 70%,
+
+        /* 茶（くすみ） */
+        #a68b6d 82%,
+
+        /* 黄色（くすみ） */
+        #f2e6b8 100%
+    );
 
     color: #fff;
     text-align: center;
@@ -51,11 +48,6 @@ html {
     overflow: hidden;
 }
 
-    color: #fff;
-    text-align: center;
-    padding: 140px 20px;
-    overflow: hidden;
-}
 
 .hero::before {
     content: "";
@@ -80,7 +72,7 @@ html {
           rgba(255,255,255,0.05) 0px,
           rgba(255,255,255,0.05) 10px, /* ← 帯の太さ */
           rgba(255,255,255,0) 60px,    /* ← 帯の周期（太さ＋間隔） */
-          rgba(255,255,255,0.05) 10px
+          rgba(255,255,255,0.05) 70px
       );
 }
 
