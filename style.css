@@ -18,7 +18,7 @@ body {
     z-index: 0;
 
     background: linear-gradient(
-        to bottom,
+        to right,
         #0f4c5c 0%,
         #176d73 15%,
         #4a5c8a 30%,
@@ -52,7 +52,7 @@ body {
 </svg>"),
 
         repeating-linear-gradient(
-            to bottom,
+            to right,
             rgba(255,255,255,0.04) 0px,
             rgba(255,255,255,0.04) 20px,
             rgba(255,255,255,0) 140px,
@@ -68,7 +68,7 @@ body {
     pointer-events: none;
 
     background: linear-gradient(
-        to bottom,
+        to right,
         rgba(255,255,255,0.15) 10%,
         rgba(255,255,255,0) 30%
     );
@@ -237,7 +237,7 @@ footer {
     color: #ffffff;
 
     background: linear-gradient(
-        to bottom,
+        to right,
         #f7edc4 0%,
         #7ec8e3 45%,
         #7a6fa3 80%
@@ -260,7 +260,7 @@ footer::before {
 </svg>"),
 
         repeating-linear-gradient(
-            to bottom,
+            to right,
             rgba(255,255,255,0.05) 0px,
             rgba(255,255,255,0.05) 20px,
             rgba(255,255,255,0) 140px,
@@ -275,7 +275,7 @@ footer::after {
     z-index: -2;
 
     background: linear-gradient(
-        to bottom,
+        to right,
         rgba(255,255,255,0.18) 0%,
         rgba(255,255,255,0) 40%
     );
