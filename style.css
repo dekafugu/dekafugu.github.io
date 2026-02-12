@@ -17,21 +17,17 @@ body {
   position: relative;
   z-index: 0;
   background: linear-gradient(
-    to right,
-    #0f4c5c 0%,
-    #176d73 15%,
-    #4a5c8a 30%,
-    #5b6aa0 45%,
-    #7a6fa3 60%,
-    #9a8bb8 70%,
-    #c2a98a 82%,
-    #f7edc4 100%
+    to left, /* ← ここを left にして反転！ */
+    #f7edc4 0%,
+    #7ec8e3 45%,
+    #7a6fa3 80%
   );
   color: #fff;
   text-align: center;
   padding: 140px 20px;
   overflow: hidden;
 }
+
 
 .hero::before {
   content: "";
