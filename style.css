@@ -261,17 +261,19 @@ a:hover {
 =========================== */
 footer {
   position: relative;
-  overflow: hidden;
-  text-align: center;
-  padding: 240px 20px 50px;
-  color: #ffffff;
+  z-index: 0;
   background: linear-gradient(
-    to right,
-    #685f91 0%,
+    to left, /* ← ここを left にして反転！ */
+    #e6d9b0 0%,
     #6bb3c9 45%,
-    #e6d9b0 80%
+    #685f91 80%
   );
+  color: #fff;
+  text-align: center;
+  padding: 140px 20px;
+  overflow: hidden;
 }
+
 
 footer::before {
   content: "";
@@ -289,7 +291,7 @@ footer::before {
 </svg>"),
     repeating-linear-gradient(
       to right,
-      rgba(255,255,255,0.1) 0px,
+      rgba(255,255,255,0.04) 0px,
       rgba(255,255,255,0.04) 20px,
       rgba(255,255,255,0) 140px,
       rgba(255,255,255,0.04) 150px
