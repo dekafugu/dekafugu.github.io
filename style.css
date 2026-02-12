@@ -217,20 +217,21 @@ a:hover {
 /* ===========================
    Photon風エフェクトとアイコン
 =========================== */
-.image-overlay {
+.photon-break {
   position: relative;
-  display: inline-block;
+  width: 100%;
+  height: 300px; /* 好きな高さに調整してOK */
   overflow: hidden;
 }
 
-.image-overlay img {
+.photon-break img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
-  /* 明るさ調整を削除 */
 }
 
-.image-overlay::after {
+.photon-break::after {
   content: "";
   position: absolute;
   top: 0;
