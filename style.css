@@ -96,6 +96,15 @@ body {
   color: #0A1A2F;
 }
 
+.hero-divider {
+  width: 80px;
+  height: 2px;
+  background-color: #ffffff;
+  border: none;
+  margin: 20px auto;
+  opacity: 0.6;
+}
+
 /* ===========================
    セクション
 =========================== */
