@@ -102,6 +102,23 @@ body {
   opacity: 0.6;
 }
 
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero .fade-in {
+  opacity: 0;
+  animation: fadeUp 1s ease-out 0.3s forwards;
+}
+
+
 /* ===========================
    セクション
 =========================== */
@@ -163,6 +180,10 @@ a {
 a:hover {
   color: #005fcc;
   text-decoration: underline;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* ===========================
@@ -321,7 +342,5 @@ footer::after {
   opacity: 0.6;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+
 
