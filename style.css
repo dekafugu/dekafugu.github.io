@@ -173,7 +173,7 @@ h2:hover::after {
 .left-divider {
   display: block;
   width: 160px;
-  height: 2px;
+  height: 1px;
   background-color: #666666;
   border: none;
   margin: 20px 0;
