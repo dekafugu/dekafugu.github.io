@@ -18,9 +18,9 @@ body {
   z-index: 0;
   background: linear-gradient(
     to left, /* ← ここを left にして反転！ */
-    #f7edc4 0%,
-    #7ec8e3 45%,
-    #7a6fa3 80%
+    #e6d9b0 0%,
+    #6bb3c9 45%,
+    #685f91 80%
   );
   color: #fff;
   text-align: center;
@@ -267,9 +267,9 @@ footer {
   color: #ffffff;
   background: linear-gradient(
     to right,
-    #f7edc4 0%,
-    #7ec8e3 45%,
-    #7a6fa3 80%
+    #685f91 0%,
+    #6bb3c9 45%,
+    #e6d9b0 80%
   );
 }
 
