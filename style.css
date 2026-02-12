@@ -237,18 +237,20 @@ a:hover {
   display: block;
 }
 
-.icon-overlay {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  padding: 6px;
+.icon-row {
   display: flex;
-  align-items: center;
+  gap: 40px; /* アイコン同士の間隔 */
   justify-content: center;
+  align-items: center;
+  margin: 20px 0;
 }
+
+.icon-item svg {
+  color: white;
+  width: 64px;
+  height: 64px;
+}
+
 
 
 /* ===========================
