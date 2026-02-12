@@ -311,7 +311,7 @@ footer::after {
   );
 }
 
-footer-divider {
+.footer-divider {
   display: block;
   width: 160px;
   height: 2px;
