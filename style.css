@@ -97,6 +97,7 @@ body {
 }
 
 .hero-divider {
+  display: block;
   width: 80px;
   height: 2px;
   background-color: #ffffff;
