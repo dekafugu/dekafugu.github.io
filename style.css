@@ -225,7 +225,7 @@ a:hover {
 =========================== */
 .photon-break {
   position: relative;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 30px auto; /* 上下に余白を追加 */
   height: 300px;
   overflow: hidden;
