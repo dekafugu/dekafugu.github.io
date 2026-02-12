@@ -18,9 +18,9 @@ body {
   z-index: 0;
   background: linear-gradient(
     to left, /* ← ここを left にして反転！ */
-    #e6d9b0 0%,
+    #685f91 0%,
     #6bb3c9 45%,
-    #685f91 80%
+    #e6d9b0 80%
   );
   color: #fff;
   text-align: center;
