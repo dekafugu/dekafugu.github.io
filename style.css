@@ -2,308 +2,308 @@
    基本設定
 =========================== */
 body {
-    font-family: sans-serif;
-    line-height: 1.8;
-    margin: 0;
-    padding: 0;
-    color: #333;
-    background: #ffffff;
+  font-family: sans-serif;
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background: #ffffff;
 }
 
 /* ===========================
    ヒーロー部分
 =========================== */
 .hero {
-    position: relative;
-    z-index: 0;
-
-    background: linear-gradient(
-        to right,
-        #0f4c5c 0%,
-        #176d73 15%,
-        #4a5c8a 30%,
-        #5b6aa0 45%,
-        #7a6fa3 60%,
-        #9a8bb8 70%,
-        #c2a98a 82%,
-        #f7edc4 100%
-    );
-
-    color: #fff;
-    text-align: center;
-    padding: 140px 20px;
-    overflow: hidden;
+  position: relative;
+  z-index: 0;
+  background: linear-gradient(
+    to right,
+    #0f4c5c 0%,
+    #176d73 15%,
+    #4a5c8a 30%,
+    #5b6aa0 45%,
+    #7a6fa3 60%,
+    #9a8bb8 70%,
+    #c2a98a 82%,
+    #f7edc4 100%
+  );
+  color: #fff;
+  text-align: center;
+  padding: 140px 20px;
+  overflow: hidden;
 }
 
 .hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-
-    background:
-        url("data:image/svg+xml;utf8,\
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    url("data:image/svg+xml;utf8,\
 <svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'>\
 <filter id='n'>\
 <feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/>\
 </filter>\
 <rect width='100%' height='100%' filter='url(#n)' opacity='0.04'/>\
 </svg>"),
-
-        repeating-linear-gradient(
-            to right,
-            rgba(255,255,255,0.04) 0px,
-            rgba(255,255,255,0.04) 20px,
-            rgba(255,255,255,0) 140px,
-            rgba(255,255,255,0.04) 150px
-        );
-}
-
-.hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -2;
-    pointer-events: none;
-
-    background: linear-gradient(
-        to right,
-        rgba(255,255,255,0.15) 10%,
-        rgba(255,255,255,0) 30%
+    repeating-linear-gradient(
+      to right,
+      rgba(255,255,255,0.04) 0px,
+      rgba(255,255,255,0.04) 20px,
+      rgba(255,255,255,0) 140px,
+      rgba(255,255,255,0.04) 150px
     );
 }
 
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background: linear-gradient(
+    to right,
+    rgba(255,255,255,0.15) 10%,
+    rgba(255,255,255,0) 30%
+  );
+}
+
 .hero h1 {
-    font-size: 2.6rem;
-    margin-bottom: 20px;
-    font-weight: 700;
+  font-size: 2.6rem;
+  margin-bottom: 20px;
+  font-weight: 700;
 }
 
 .hero p {
-    font-size: 1.2rem;
-    opacity: 0.95;
+  font-size: 1.2rem;
+  opacity: 0.95;
 }
 
 .cta {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 12px 28px;
-    border: 2px solid #ffffff;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 6px;
-    transition: 0.3s;
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 28px;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.3s;
 }
 
 .cta:hover {
-    background: #ffffff;
-    color: #0A1A2F;
+  background: #ffffff;
+  color: #0A1A2F;
 }
 
 /* ===========================
    セクション
 =========================== */
 section {
-    padding: 60px 20px;
-    max-width: 800px;
-    margin: auto;
-
-    border-radius: 8px;
-    box-shadow: none !important;
+  padding: 60px 20px;
+  max-width: 800px;
+  margin: auto;
+  border-radius: 8px;
+  box-shadow: none !important;
 }
 
-/* 交互背景 */
 section:nth-of-type(odd) {
-    background: linear-gradient(120deg, #ffffff, #f7fbff);
+  background: linear-gradient(120deg, #ffffff, #f7fbff);
 }
 
 section:nth-of-type(even) {
-    background: linear-gradient(120deg, #e9ecef, #f1f3f5);
+  background: linear-gradient(120deg, #e9ecef, #f1f3f5);
 }
 
-/* hover しても絶対に白くならない */
 section:hover {
-    box-shadow: none !important;
+  box-shadow: none !important;
 }
 
 /* ===========================
    見出し
 =========================== */
 h2 {
-    position: relative;
-    display: inline-block;
-    padding-bottom: 4px;
-    margin-bottom: 20px;
-    color: #0055aa;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+  margin-bottom: 20px;
+  color: #0055aa;
 }
 
 h2::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0%;
-    height: 2px;
-    background: #0055aa;
-    transition: width 0.4s ease;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #0055aa;
+  transition: width 0.4s ease;
 }
 
 h2:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 /* ===========================
    リンク
 =========================== */
 a {
-    color: #0078ff;
-    text-decoration: none;
-    transition: color 0.2s ease;
+  color: #0078ff;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 a:hover {
-    color: #005fcc;
-    text-decoration: underline;
+  color: #005fcc;
+  text-decoration: underline;
 }
 
 /* ===========================
    文章＋画像の2カラム
 =========================== */
 .two-col {
-    display: flex;
-    gap: 30px;
-    align-items: center;
+  display: flex;
+  gap: 30px;
+  align-items: center;
 }
 
 .two-col.reverse {
-    flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 
 .two-col .text {
-    flex: 1;
+  flex: 1;
 }
 
 .two-col .text p,
 .two-col .text li {
-    line-height: 1.9;
-    margin-bottom: 12px;
+  line-height: 1.9;
+  margin-bottom: 12px;
 }
 
-/* 通常状態（影なし・transformなし） */
 .two-col .image img {
-    width: 260px;
-    border-radius: 6px;
-    box-shadow: none !important;
-    transition: none; /* ← これが“ぴょん1回”の鍵 */
+  width: 260px;
+  border-radius: 6px;
+  box-shadow: none !important;
+  transition: none;
 }
 
-/* ぴょんアニメ */
 @keyframes pyon {
-    0%   { transform: translateY(0); }
-    40%  { transform: translateY(-12px); }
-    65%  { transform: translateY(4px); }
-    85%  { transform: translateY(-3px); }
-    100% { transform: translateY(0); }
+  0%   { transform: translateY(0); }
+  40%  { transform: translateY(-12px); }
+  65%  { transform: translateY(4px); }
+  85%  { transform: translateY(-3px); }
+  100% { transform: translateY(0); }
 }
 
-/* hover した瞬間だけ1回ぴょん */
 .two-col .image img:hover {
-    animation: pyon 0.45s ease-out 1;
+  animation: pyon 0.45s ease-out 1;
 }
 
-/* スマホ */
 @media (max-width: 700px) {
-    .two-col,
-    .two-col.reverse {
-        flex-direction: column;
-        align-items: center;
-    }
+  .two-col,
+  .two-col.reverse {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .two-col .image img {
-        width: 80%;
-        max-width: 300px;
-    }
+  .two-col .image img {
+    width: 80%;
+    max-width: 300px;
+  }
 }
 
+/* ===========================
+   Photon風エフェクトとアイコン
+=========================== */
 .image-overlay {
   position: relative;
   display: inline-block;
+  overflow: hidden;
 }
 
 .image-overlay img {
   width: 100%;
   height: auto;
   display: block;
+  filter: brightness(0.6) contrast(1.2);
+}
+
+.image-overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0.2), transparent 70%);
+  mix-blend-mode: screen;
+  pointer-events: none;
 }
 
 .icon-row {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
   display: flex;
-  gap: 40px; /* アイコン同士の間隔 */
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0;
+  gap: 40px;
+  z-index: 2;
 }
 
 .icon-item svg {
-  color: white;
   width: 64px;
   height: 64px;
+  stroke: white;
 }
-
-
 
 /* ===========================
    フッター
 =========================== */
 footer {
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-    padding: 240px 20px 50px;
-    color: #ffffff;
-
-    background: linear-gradient(
-        to right,
-        #f7edc4 0%,
-        #7ec8e3 45%,
-        #7a6fa3 80%
-    );
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 240px 20px 50px;
+  color: #ffffff;
+  background: linear-gradient(
+    to right,
+    #f7edc4 0%,
+    #7ec8e3 45%,
+    #7a6fa3 80%
+  );
 }
 
 footer::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-
-    background:
-        url("data:image/svg+xml;utf8,\
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    url("data:image/svg+xml;utf8,\
 <svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'>\
 <filter id='n'>\
 <feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/>\
 </filter>\
 <rect width='100%' height='100%' filter='url(#n)' opacity='0.04'/>\
 </svg>"),
-
-        repeating-linear-gradient(
-            to right,
-            rgba(255,255,255,0.05) 0px,
-            rgba(255,255,255,0.05) 20px,
-            rgba(255,255,255,0) 140px,
-            rgba(255,255,255,0.05) 150px
-        );
+    repeating-linear-gradient(
+      to right,
+      rgba(255,255,255,0.05) 0px,
+      rgba(255,255,255,0.05) 20px,
+      rgba(255,255,255,0) 140px,
+      rgba(255,255,255,0.05) 150px
+    );
 }
 
 footer::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -2;
-
-    background: linear-gradient(
-        to right,
-        rgba(255,255,255,0.18) 0%,
-        rgba(255,255,255,0) 40%
-    );
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(
+    to right,
+    rgba(255,255,255,0.18) 0%,
+    rgba(255,255,255,0) 40%
+  );
 }
