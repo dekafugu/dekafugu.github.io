@@ -170,6 +170,16 @@ h2:hover::after {
   width: 100%;
 }
 
+.left-divider {
+  display: block;
+  width: 160px;
+  height: 2px;
+  background-color: #666666;
+  border: none;
+  margin: 20px auto;
+  opacity: 0.6;
+}
+
 /* ===========================
    リンク
 =========================== */
