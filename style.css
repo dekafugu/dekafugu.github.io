@@ -176,7 +176,7 @@ h2:hover::after {
   height: 2px;
   background-color: #666666;
   border: none;
-  margin: 20px auto;
+  margin: 20px 0;
   opacity: 0.6;
 }
 
