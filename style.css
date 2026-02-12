@@ -311,3 +311,13 @@ footer::after {
   );
 }
 
+footer-divider {
+  display: block;
+  width: 160px;
+  height: 2px;
+  background-color: #ffffff;
+  border: none;
+  margin: 20px auto;
+  opacity: 0.6;
+}
+
