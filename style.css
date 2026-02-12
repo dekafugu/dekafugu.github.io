@@ -289,7 +289,7 @@ footer::before {
 </svg>"),
     repeating-linear-gradient(
       to right,
-      rgba(255,255,255,0.04) 0px,
+      rgba(255,255,255,0.1) 0px,
       rgba(255,255,255,0.04) 20px,
       rgba(255,255,255,0) 140px,
       rgba(255,255,255,0.04) 150px
