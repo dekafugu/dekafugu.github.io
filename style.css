@@ -198,7 +198,7 @@ section:hover {
 .case-list li {
   counter-increment: case-counter;
   position: relative;
-  margin-bottom: 1.5em;
+  margin-bottom: 1.8em;
 }
 
 .case-list li::before {
