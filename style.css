@@ -189,6 +189,7 @@ section:hover {
 }
 
 .case-list {
+  line-height: 1.8;
   list-style-type: none;
   counter-reset: case-counter;
   padding-left: 1.5em;
@@ -212,6 +213,7 @@ section:hover {
 .case-list li:nth-child(4)::before { content: "④"; }
 .case-list li:nth-child(5)::before { content: "⑤"; }
 
+.story { padding: 4em 1em; }
 
 /* ===========================
    見出し
