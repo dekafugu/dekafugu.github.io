@@ -148,7 +148,7 @@ section:hover {
    見出し
 =========================== */
 h1 {
-  font-size: 1.8em; /* ← ここでサイズ調整 */
+  font-size: 1.6em; /* ← ここでサイズ調整 */
   padding-bottom: 0.3em;
 }
 
