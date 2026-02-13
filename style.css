@@ -102,6 +102,16 @@ body {
   opacity: 0.6;
 }
 
+.hero-divider2 {
+  display: block;
+  width: 160px;
+  height: 1px;
+  background-color: #666666;
+  border: none;
+  margin: 20px auto;
+  opacity: 0.6;
+}
+
 @keyframes focusIn {
   0% {
     opacity: 0;
