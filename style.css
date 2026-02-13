@@ -189,7 +189,7 @@ section:hover {
 }
 
 .case-list {
-  line-height: 1.8;
+  line-height: 2;
   list-style-type: none;
   counter-reset: case-counter;
   padding-left: 1.5em;
@@ -198,7 +198,7 @@ section:hover {
 .case-list li {
   counter-increment: case-counter;
   position: relative;
-  margin-bottom: 1.8em;
+  margin-bottom: 2em;
 }
 
 .case-list li::before {
