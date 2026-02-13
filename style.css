@@ -170,6 +170,31 @@ section:hover {
   background-color: #fafafa;
 }
 
+.case-list {
+  list-style-type: none;
+  counter-reset: case-counter;
+  padding-left: 1.5em;
+}
+
+.case-list li {
+  counter-increment: case-counter;
+  position: relative;
+  margin-bottom: 1.5em;
+}
+
+.case-list li::before {
+  content: "①";
+  counter-increment: none;
+  position: absolute;
+  left: -1.5em;
+  font-weight: bold;
+}
+.case-list li:nth-child(2)::before { content: "②"; }
+.case-list li:nth-child(3)::before { content: "③"; }
+.case-list li:nth-child(4)::before { content: "④"; }
+.case-list li:nth-child(5)::before { content: "⑤"; }
+
+
 /* ===========================
    見出し
 =========================== */
