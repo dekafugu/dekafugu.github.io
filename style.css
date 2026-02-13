@@ -149,7 +149,6 @@ section:hover {
 =========================== */
 h1 {
   font-size: 1.8em; /* ← ここでサイズ調整 */
-  border-bottom: 2px solid #ccc;
   padding-bottom: 0.3em;
 }
 
