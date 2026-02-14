@@ -221,6 +221,16 @@ section:hover {
 
 .story { padding: 4em 1em; }
 
+.section-title {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5em; /* アイコンとテキストの間隔 */
+}
+
+.section-title svg {
+  flex-shrink: 0;
+}
+
 /* ===========================
    見出し
 =========================== */
