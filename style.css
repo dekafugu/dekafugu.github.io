@@ -224,7 +224,7 @@ section:hover {
 .section-title {
   display: flex;
   align-items: center;
-  gap: 0.8em; /* アイコンとテキストの間隔 */
+  gap: 1.0em; /* アイコンとテキストの間隔 */
 }
 
 .section-title svg {
