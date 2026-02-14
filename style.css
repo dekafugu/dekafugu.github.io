@@ -190,7 +190,7 @@ section:hover {
 
 .price-table td:nth-child(3),
 .price-table th:nth-child(3) {
-  width: 100px; /* ← 好きな幅に調整してね */
+  width: 75px; /* ← 好きな幅に調整してね */
   white-space: nowrap; /* テキストの折り返しを防ぐならこれも */
 }
 
