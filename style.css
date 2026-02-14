@@ -188,6 +188,12 @@ section:hover {
   background-color: #fafafa;
 }
 
+.price-table td:nth-child(3),
+.price-table th:nth-child(3) {
+  width: 160px; /* ← 好きな幅に調整してね */
+  white-space: nowrap; /* テキストの折り返しを防ぐならこれも */
+}
+
 .case-list {
   line-height: 2;
   list-style-type: none;
