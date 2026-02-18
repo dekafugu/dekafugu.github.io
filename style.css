@@ -300,7 +300,7 @@ html {
 
 .video-item {
   flex: 0 0 auto;
-  width: 300px;
+  width: 560px;
   scroll-snap-align: start;
   background: #f9f9f9;
   border-radius: 8px;
