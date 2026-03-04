@@ -262,10 +262,14 @@ section,
 }
 
 .section-title {
-  display: flex;
-  align-items: center;
-  gap: 1.0em; /* アイコンとテキストの間隔 */
+  font-weight: bold;
+  font-size: 1.05em;
+  border-bottom: 2px solid #cce0f5;
+  padding-bottom: 4px;
+  margin-bottom: 6px;
+  color: #0055aa;
 }
+
 
 .section-title svg {
   flex-shrink: 0;
