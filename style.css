@@ -207,6 +207,11 @@ section:hover {
   background-color: #fafafa;
 }
 
+.price-table td:nth-child(2),
+.price-table th:nth-child(2) {
+  width: 300px; /* ← 好きな幅に調整してね！ */
+}
+
 .price-table td:nth-child(3),
 .price-table th:nth-child(3) {
   width: 100px; /* ← 好きな幅に調整してね */
