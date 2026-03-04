@@ -240,6 +240,13 @@ section:hover {
 
 .story { padding: 4em 1em; }
 
+section,
+.story {
+  padding: 60px 40px;
+  max-width: 1000px;
+  margin: auto;
+}
+
 .section-title {
   display: flex;
   align-items: center;
