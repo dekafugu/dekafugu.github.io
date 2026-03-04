@@ -219,12 +219,12 @@ section:hover {
 }
 
 .price-table td .service-title {
+  background-color: #f5faff;
+  padding: 6px 10px;
   font-weight: bold;
-  font-size: 1.05em;
-  border-bottom: 2px solid #cce0f5;
-  padding-bottom: 4px;
+  border-radius: 4px;
   margin-bottom: 6px;
-  color: #111111;
+  display: inline-block;
 }
 
 .case-list {
