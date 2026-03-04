@@ -219,12 +219,12 @@ section:hover {
 }
 
 .price-table td .service-title {
-  background-color: #eef5ff;
-  padding: 6px 10px;
-  border-left: 4px solid #0055aa;
   font-weight: bold;
+  font-size: 1.05em;
+  border-bottom: 2px solid #cce0f5;
+  padding-bottom: 4px;
   margin-bottom: 6px;
-  display: inline-block;
+  color: #0055aa;
 }
 
 .case-list {
@@ -262,14 +262,10 @@ section,
 }
 
 .section-title {
-  font-weight: bold;
-  font-size: 1.05em;
-  border-bottom: 2px solid #cce0f5;
-  padding-bottom: 4px;
-  margin-bottom: 6px;
-  color: #0055aa;
+  display: flex;
+  align-items: center;
+  gap: 1.0em; /* アイコンとテキストの間隔 */
 }
-
 
 .section-title svg {
   flex-shrink: 0;
