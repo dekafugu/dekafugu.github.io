@@ -224,7 +224,9 @@ section:hover {
   border-bottom: 2px solid #cce0f5;
   padding-bottom: 4px;
   margin-bottom: 6px;
-  color: #0055aa;
+  color: #111111;
+  display: inline-block;
+  width: 40px;
 }
 
 .case-list {
