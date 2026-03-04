@@ -173,10 +173,22 @@ section:hover {
   color: #333;
 }
 
-.price-table th, .price-table td {
+.price-table th {
   border: 1px solid #ccc;
   padding: 12px;
   text-align: left;
+}
+
+.price-table td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: left;
+  padding: 16px 16px;
+  line-height: 1.8;
+  font-size: 15px;
+  vertical-align: top;
+  white-space: normal;
+  word-break: break-word;
 }
 
 .price-table th {
