@@ -218,6 +218,15 @@ section:hover {
   white-space: nowrap; /* テキストの折り返しを防ぐならこれも */
 }
 
+.price-table td .service-title {
+  background-color: #eef5ff;
+  padding: 6px 10px;
+  border-left: 4px solid #0055aa;
+  font-weight: bold;
+  margin-bottom: 6px;
+  display: inline-block;
+}
+
 .case-list {
   line-height: 2;
   list-style-type: none;
