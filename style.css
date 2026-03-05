@@ -72,13 +72,28 @@ body {
   font-weight: 700;
 }
 
-/* キャッチコピー（後者） */
-.hero .hero-copy {
-  font-size: 1.8rem; /* ここを小さく調整！ */
-  margin-top: 0;
+/* --- ヒーロー専用のh2設定（追加・修正） --- */
+.hero h2.hero-copy {
+  /* 下線や青色をリセット */
+  color: #fff;           /* 白文字に戻す */
+  display: block;        /* inline-blockを解除 */
+  padding-bottom: 0;
   margin-bottom: 20px;
-  font-weight: 500; /* 少し細くすると洗練されます */
+  
+  /* フォントサイズと太さの調整 */
+  font-size: 1.8rem;
+  font-weight: 500;
   line-height: 1.4;
+}
+
+/* ヒーロー内のh2には下線アニメーションをつけない設定 */
+.hero h2.hero-copy::after {
+  content: none; /* 下線の棒を消す */
+}
+
+/* ついでにマウスホバー時の挙動も無効化しておくと安心 */
+.hero h2.hero-copy:hover::after {
+  width: 0%;
 }
 
 .hero p {
