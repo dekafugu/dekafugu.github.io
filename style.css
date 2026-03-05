@@ -207,8 +207,10 @@ section:hover {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease;
-  background-color: #f5faff; /* ★ここが薄い青の背景 */
-  border-left: 6px solid #0055aa; /* ★中身にも縦バーを継続 */
+  background-color: #f5faff;
+  border-left: 6px solid #0055aa;
+  /* ここで padding を 0 に固定するのが鉄則！ */
+  padding: 0 !important; 
 }
 
 .accordion-content.open {
@@ -217,14 +219,26 @@ section:hover {
 
 /* --- 事例カード内の装飾 --- */
 .case-card {
-  padding: 20px; /* ここで余白を作る */
+  /* 外枠の padding は消して、上下に少し余裕を持たせる */
   border-right: 1px solid #e0eaf5;
   border-bottom: 1px solid #e0eaf5;
+  display: block;
 }
 
 .case-card p {
-  margin: 0.8em 0;
+  margin: 0;
+  padding: 10px 20px; /* 文字の上下左右に余白を作る */
   line-height: 1.6;
+}
+
+/* 最初の p タグだけ、上の余白を少し多めにする（見た目の調整） */
+.case-card p:first-child {
+  padding-top: 20px;
+}
+
+/* 最後の p タグだけ、下の余白を少し多めにする */
+.case-card p:last-child {
+  padding-bottom: 20px;
 }
 
 .case-card strong {
