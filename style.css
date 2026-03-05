@@ -196,6 +196,25 @@ section:hover {
   justify-content: space-between;
   align-items: center;
   transition: background-color 0.3s;
+  position: relative; /* 子要素の基準にする */
+  padding-right: 50px; /* 右側のアイコン分のスペースを確保 */
+}
+
+/* --- 【重要】開いているとき（隣のcontentに.openがあるとき）の設定 --- */
+/* JSで.accordion-contentに.openがつく構造に合わせます */
+.accordion-content.open + .accordion-toggle::after {
+  content: '－'; /* マイナスに切り替え */
+  transform: rotate(180deg); /* 動きをつけて「変わった感」を出す */
+}
+
+/* 共通のアイコン設定 */
+.accordion-toggle::after {
+  content: '＋'; /* デフォルトはプラス */
+  position: absolute;
+  right: 20px;
+  font-size: 1.2rem;
+  color: #0055aa;
+  transition: transform 0.3s ease;
 }
 
 .accordion-toggle:hover {
