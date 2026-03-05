@@ -207,9 +207,14 @@ section:hover {
   transform: rotate(180deg); /* 動きをつけて「変わった感」を出す */
 }
 
+/* ボタンが active（開いている状態）のとき */
+.accordion-toggle.active::after {
+  content: '－';
+}
+
 /* 共通のアイコン設定 */
 .accordion-toggle::after {
-  content: '－';
+  content: '+';
   position: absolute;
   right: 20px;
   font-size: 1.2rem;
