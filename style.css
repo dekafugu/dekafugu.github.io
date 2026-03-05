@@ -209,7 +209,7 @@ section:hover {
 
 /* 共通のアイコン設定 */
 .accordion-toggle::after {
-  content: '＋'; /* デフォルトはプラス */
+  content: '－';
   position: absolute;
   right: 20px;
   font-size: 1.2rem;
