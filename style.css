@@ -173,57 +173,75 @@ section:hover {
   overflow-x: auto;
 }
 
+/* --- アコーディオン全体 --- */
 .accordion {
-  margin-bottom: 1em;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  overflow: hidden; /* 角丸をはみ出さないように */
 }
 
+/* --- ボタン部分（左に濃い青バー） --- */
 .accordion-toggle {
-  position: relative;
+  background-color: #ffffff;
+  color: #0055aa;
+  padding: 1.2em;
+  width: 100%;
+  text-align: left;
+  border: 1px solid #e0eaf5;
+  border-left: 6px solid #0055aa; /* ★ここが濃い青の縦バー */
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.accordion-toggle::after {
-  content: '＋';
-  font-size: 1.2em;
-  transition: transform 0.3s ease;
-}
-
-/* 開いている時はマイナス（または回転）に見せる */
-.accordion-content.open + .accordion-toggle::after {
-  content: '－';
+  transition: background-color 0.3s;
 }
 
 .accordion-toggle:hover {
-  background-color: #003f88;
+  background-color: #f0f7ff;
 }
 
+/* --- 開いた時の中身（薄い青の塗りつぶし） --- */
 .accordion-content {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease;
+  background-color: #f5faff; /* ★ここが薄い青の背景 */
+  border-left: 6px solid #0055aa; /* ★中身にも縦バーを継続 */
+  border-right: 1px solid #e0eaf5;
+  border-bottom: 1px solid #e0eaf5;
 }
 
 .accordion-content.open {
-  max-height: 1000px; /* 十分大きめにしておく（JSで上書きされる） */
+  /* max-heightはJSで制御されます */
+}
+
+/* --- 事例カード内の装飾 --- */
+.case-card {
+  padding: 15px 20px;
 }
 
 .case-card p {
-  padding: 8px 12px;
-  border-radius: 4px;
-  margin-bottom: 8px;
+  margin: 0.8em 0;
+  line-height: 1.6;
 }
 
 .case-card strong {
   display: inline-block;
-  width: 80px; /* 見出しの幅を揃える */
+  min-width: 60px;
+  text-align: center;
   color: #fff;
-  padding: 2px 8px;
+  padding: 2px 10px;
   border-radius: 3px;
   margin-right: 10px;
-  font-size: 0.9em;
+  font-size: 0.85em;
 }
+
+/* 課題・解決・効果の色分け */
+.case-card p:nth-child(1) strong { background-color: #d9534f; } /* 課題：赤系 */
+.case-card p:nth-child(2) strong { background-color: #0055aa; } /* 解決：青系 */
+.case-card p:nth-child(3) strong { background-color: #5cb85c; } /* 効果：緑系 */
 
 .price-table table {
   width: 100%;
