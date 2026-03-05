@@ -68,7 +68,7 @@ body {
 /* 屋号（メインタイトル） */
 .hero h1 {
   font-size: 3.2rem; /* 少し大きくしてもいいかも */
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   font-weight: 700;
 }
 
