@@ -433,5 +433,26 @@
   <p>© Ome技術研究室</p>
 </footer>
 
+<script>
+  document.querySelectorAll('.accordion-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      const content = button.nextElementSibling;
+      const isOpen = content.classList.contains('open');
+
+      // 一旦すべて閉じる（必要なら）
+      document.querySelectorAll('.accordion-content').forEach(c => {
+        c.classList.remove('open');
+        c.style.maxHeight = null;
+      });
+
+      // 開閉切り替え
+      if (!isOpen) {
+        content.classList.add('open');
+        content.style.maxHeight = content.scrollHeight + "px";
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
