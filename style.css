@@ -178,15 +178,21 @@ section:hover {
 }
 
 .accordion-toggle {
-  background-color: #0055aa;
-  color: white;
-  padding: 1em;
-  width: 100%;
-  text-align: left;
-  border: none;
-  font-size: 1.1em;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-toggle::after {
+  content: '＋';
+  font-size: 1.2em;
+  transition: transform 0.3s ease;
+}
+
+/* 開いている時はマイナス（または回転）に見せる */
+.accordion-content.open + .accordion-toggle::after {
+  content: '－';
 }
 
 .accordion-toggle:hover {
@@ -204,7 +210,19 @@ section:hover {
 }
 
 .case-card p {
-  margin: 0.5em 0;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.case-card strong {
+  display: inline-block;
+  width: 80px; /* 見出しの幅を揃える */
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin-right: 10px;
+  font-size: 0.9em;
 }
 
 .price-table table {
