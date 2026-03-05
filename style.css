@@ -173,6 +173,38 @@ section:hover {
   overflow-x: auto;
 }
 
+.accordion {
+  margin-bottom: 1em;
+}
+
+.accordion-toggle {
+  background-color: #0055aa;
+  color: white;
+  padding: 1em;
+  width: 100%;
+  text-align: left;
+  border: none;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-toggle:hover {
+  background-color: #003f88;
+}
+
+.accordion-content {
+  display: none;
+  padding: 1em;
+  background-color: #f9f9f9;
+  border-left: 5px solid #0055aa;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.case-card p {
+  margin: 0.5em 0;
+}
+
 .price-table table {
   width: 100%;
   border-collapse: collapse;
