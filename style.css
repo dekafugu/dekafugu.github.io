@@ -196,44 +196,51 @@ section:hover {
   box-shadow: none !important;
 }
 
-/* ご依頼の流れセクション（画像なし・詳細版） */
+/* ご依頼の流れセクション（点線復活＆カード版） */
 .flow-container {
-  max-width: 960px; /* 横幅を調整 */
+  max-width: 900px;
   margin: 0 auto;
   padding: 60px 20px;
 }
 
-.flow-content {
-  width: 100%;
-}
-
 .detailed-flow {
-  margin-top: 40px;
+  position: relative; /* 点線の基準にする */
 }
 
-/* 各ステップの共通スタイル */
+/* 縦の点線：擬似要素で作る */
+.detailed-flow::before {
+  content: "";
+  position: absolute;
+  left: 43px; /* ステップ番号の中心に合わせる */
+  top: 20px;
+  bottom: 20px;
+  width: 2px;
+  border-left: 2px dashed #0055aa; /* ここが復活した点線だお！ */
+  z-index: 0;
+}
+
 .detailed-flow .step-item {
   position: relative;
-  padding: 30px 40px 30px 80px; /* パディングをリッチに */
-  margin-bottom: 20px;
+  z-index: 1; /* 点線より上にカードを出す */
+  padding: 25px 30px 25px 85px; /* 左側に番号分のスペースを確保 */
+  margin-bottom: 40px; /* ステップ間の隙間 */
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 85, 170, 0.08); /* ほのかな青い影 */
-  border-left: 5px solid #0055aa; /* 左側の強調線 */
+  box-shadow: 0 4px 15px rgba(0, 85, 170, 0.08);
+  border: 1px solid #eef2f6;
   transition: transform 0.3s ease;
 }
 
-/* マウスオーバー時のエフェクト（おしゃれ） */
 .detailed-flow .step-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0, 85, 170, 0.15);
+  transform: translateX(10px); /* 横にスライドする動きで「進む感」を出す */
 }
 
-/* ステップ番号のスタイル */
+/* ステップ番号を点線の真上に配置 */
 .detailed-flow .step-num {
   position: absolute;
-  left: 20px;
-  top: 30px;
+  left: 19px;
+  top: 50%;
+  transform: translateY(-50%); /* カードの高さ中央に配置 */
   background-color: #0055aa;
   color: #fff;
   width: 48px;
@@ -244,50 +251,50 @@ section:hover {
   justify-content: center;
   font-size: 1.1rem;
   font-weight: bold;
+  border: 4px solid #f9f9f9; /* 背景色と同じ色で縁取りして点線を隠す */
 }
 
 /* タイトルと説明文 */
 .detailed-flow .step-item h3 {
-  margin: 0 0 10px 0;
-  font-size: 1.3rem;
+  margin: 0 0 8px 0;
+  font-size: 1.2rem;
   color: #0055aa;
 }
 
 .detailed-flow .step-item p {
   margin: 0;
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: 0.95rem;
   color: #444;
+  line-height: 1.6;
 }
 
-/* 安心ポイント（PoCステップ）の装飾（余裕があれば） */
+/* PoCステップの特別色 */
 .PoC-step {
-  border-left-color: #ff9900; /* オレンジにして目立たせる */
-  background: #fff9f0; /* ほのかにオレンジ */
+  border: 2px solid #ff9900 !important;
+  background-color: #fffcf5 !important;
 }
 
-.PoC-step h3 {
-  color: #e68a00;
+.PoC-step .step-num {
+  background-color: #ff9900;
 }
 
-/* 最後のステップの余白調整 */
+/* 最後のステップの余白 */
 .detailed-flow .step-item:last-child {
   margin-bottom: 0;
 }
 
-/* スマートフォン対応（さらにシンプルに） */
+/* スマホ表示の微調整 */
 @media (max-width: 768px) {
+  .detailed-flow::before {
+    left: 33px;
+  }
   .detailed-flow .step-item {
-    padding: 20px 20px 20px 70px;
+    padding-left: 70px;
   }
   .detailed-flow .step-num {
-    left: 10px;
+    left: 13px;
     width: 40px;
     height: 40px;
-    font-size: 1rem;
-  }
-  .detailed-flow .step-item h3 {
-    font-size: 1.1rem;
   }
 }
 
