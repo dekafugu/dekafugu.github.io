@@ -6,9 +6,21 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="site-wrapper">
+    <nav class="side-menu" id="sideMenu">
+      <div class="menu-trigger">≡</div>
+      <ul>
+        <li><a href="#hero">トップ</a></li>
+        <li><a href="#flow">ご依頼の流れ</a></li>
+        <li><a href="#story">導入事例</a></li>
+        <li><a href="#price">提供サービス</a></li>
+        <li><a href="#works">技術紹介</a></li>
+        <li><a href="#contact">お問い合わせ</a></li>
+      </ul>
+    </nav>
+<main class="main-content">
 
-<header class="hero">
-  <div class="band3"></div>
+<header class="hero" id="hero">
   <h1 class="focus-in">Ome技術研究室</h1>
   <svg width="150px" height="150px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#FFFFFF" class="focus-in">
     <path d="M21 2L20 3" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -88,7 +100,7 @@
 <img src="img4.jpg">
 </div>
 
-<section class="flow">
+<section class="flow" id="flow">
   <div class="flow-container">
     <div class="flow-content">
       <div class="section-title">
@@ -99,7 +111,7 @@
         <h2>ご依頼の流れ</h2>
       </div>
       
-      <p class="flow-intro">「現場データの見える化支援」と「現場DX・内製化支援プログラム」をご提供する場合の例を、時間軸を添えてご案内します。見える化導入までの最短スケジュールとして、ご活用ください。</p>
+      <p class="flow-intro">「現場データの見える化支援」と「現場DX・内製化支援プログラム」の提供例を、時間軸を添えてご案内します。見える化導入のスケジュールの目安としてご活用ください。</p>
       
       <div class="flow-steps detailed-flow">
         <div class="step-item">
@@ -149,9 +161,7 @@
   </div>
 </section>
   
-<hr class="hero-divider2">
-  
-<section class="story">
+<section class="story" id="story">
   <div class="section-title">
       <svg width="50" height="50" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#0055aa">
         <path d="M4 14V18.4C4 18.7314 4.26863 19 4.6 19H10" stroke="#0055aa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M19 14V18.4C19 18.7314 18.7314 19 18.4 19H14" stroke="#0055aa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14 5H18.4C18.7314 5 19 5.26863 19 5.6V10" stroke="#0055aa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M4 10V5.6C4 5.26863 4.26863 5 4.6 5H10" stroke="#0055aa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14 19V20C14 21.1046 13.1046 22 12 22C10.8954 22 10 21.1046 10 20V19" stroke="#0055aa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M4 10H5C6.10457 10 7 10.8954 7 12C7 13.1046 6.10457 14 5 14H4" stroke="#0055aa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M19 10H20C21.1046 10 22 10.8954 22 12C22 13.1046 21.1046 14 20 14H19" stroke="#0055aa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14 5V4C14 2.89543 13.1046 2 12 2C10.8954 2 10 2.89543 10 4V5" stroke="#0055aa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -208,182 +218,274 @@
 <div class="photon-break">
 <img src="img5_2.png">
 </div>
-
-<hr class="hero-divider2">
   
 <section class="price-table" id="price">
   <div class="section-title">
-      <svg width="50" height="50" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#0055aa">
-        <path d="M16.4724 20H4.1C3.76863 20 3.5 19.7314 3.5 19.4V9.6C3.5 9.26863 3.76863 9 4.1 9H6.86762C7.57015 9 8.22116 8.6314 8.5826 8.02899L11.293 3.51161C11.8779 2.53688 13.2554 2.44422 13.9655 3.33186C14.3002 3.75025 14.4081 4.30635 14.2541 4.81956L13.2317 8.22759C13.1162 8.61256 13.4045 9 13.8064 9H18.3815C19.7002 9 20.658 10.254 20.311 11.5262L18.4019 18.5262C18.1646 19.3964 17.3743 20 16.4724 20Z" stroke="#0055aa" stroke-width="1.5" stroke-linecap="round"></path><path d="M7 20L7 9" stroke="#0055aa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-      </svg>
+    <svg width="50" height="50" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#0055aa">
+      <path d="M16.4724 20H4.1C3.76863 20 3.5 19.7314 3.5 19.4V9.6C3.5 9.26863 3.76863 9 4.1 9H6.86762C7.57015 9 8.22116 8.6314 8.5826 8.02899L11.293 3.51161C11.8779 2.53688 13.2554 2.44422 13.9655 3.33186C14.3002 3.75025 14.4081 4.30635 14.2541 4.81956L13.2317 8.22759C13.1162 8.61256 13.4045 9 13.8064 9H18.3815C19.7002 9 20.658 10.254 20.311 11.5262L18.4019 18.5262C18.1646 19.3964 17.3743 20 16.4724 20Z" stroke="#0055aa" stroke-width="1.5" stroke-linecap="round"></path><path d="M7 20L7 9" stroke="#0055aa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
     <h2>提供サービス例と料金の目安</h2>
   </div>
-  
-  <div class="table-wrapper">
-    <table>
-      <thead>
-        <tr>
-          <th>サービスとその内容</th>
-          <th>こんなお客様におすすめ</th>
-          <th>料金目安</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <div class="service-title">🔧 現場データの見える化支援</div>
-             <p>現場にセンサーを設置し、データの収集・処理・可視化までを一貫して支援します。<br>
-             ダッシュボード等を活用し、現場の状況をリアルタイムに“見える化”します。</p>
-          </td>
-          <td>
-            ・何から始めればいいかわからない<br>
-            ・見える化したい/データを蓄積したい
-          </td>
-          <td>
-            50万円
-          </td>
-        </tr> 
-        
-        <tr>
-          <td>
-            <div class="service-title">🤝 現場DX・内製化支援プログラム</div>
-            <p>現場担当者向けに、座学と実技を組み合わせた8時間のカリキュラムで教育を行います。<br>
-            導入システムを現場の"道具"として定着させ、自社で運用・改善し続けられる体制を構築します。</p>
-          </td>
-          <td>
-            ・IoT人材を育てたい<br>
-            ・現場から主体的に行動してもらいたい<br>
-            ・DXで現場から会社を変革していきたい
-          </td>
-          <td>
-            15万円
-          </td>
-        </tr>
-        
-        <tr>
-          <td>
-            <div class="service-title">🔧 エッジデバイスの試作</div>
-            <p>AI処理を組み込んだエッジデバイスの試作を行います。現場でセンサデータや画像データを自律的に処理し、即時の判断や制御が可能です。</p>
-          </td>
-          <td>
-            ・作業を自動化したい<br>
-            ・AI技術を導入したい<br>
-            ・オフラインで処理したい<br>
-          </td>
-          <td>
-            60万円
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="service-title">🔧 小規模自動化装置の試作</div>
-            <p>マイコンを用いて、バルブやスイッチなどの操作を自動化する小規模装置を試作します。<br>
-            （※過酷な環境や長時間の連続稼働を想定される場合は、別途ご相談ください。）</p>
-          </td>
-          <td>
-            ・作業を自動化したい<br>
-            ・現場の人手不足を解消したい<br>
-          </td>
-          <td>
-            -
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="service-title">📊 技術検証（IoT）</div>
-            <p>見える化やデータ蓄積などのIoT技術について、本格導入前に効果を検証いただけます。</p>
-          </td>
-          <td>
-            ・新規技術を導入したいが、いきなりの高額投資はリスクが大きい
-          </td>
-          <td>
-            15万円
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="service-title">📊 技術検証（AI）</div>
-            <p>画像認識や異常検知などのAI技術について、本格導入前に効果を検証いただけます。</p>
-          </td>
-          <td>
-            ・新規技術を導入したいが、いきなりの高額投資はリスクが大きい
-          </td>
-          <td>
-            30万円
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="service-title">🔧 筐体・治具設計</div>
-            <p>3DCADを用いて、目的や使用環境に合わせた部品の設計を行います。</p>
-          </td>
-          <td>
-            ・設計を外注したい<br>
-          ・3Dデータのみ必要
-          </td>
-          <td>
-            -
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="service-title">🔧 3Dプリンタ造形</div>
-            <p>樹脂素材による3Dプリント造形を行います。</p>
-          </td>
-          <td>
-            ・試作用の部品を安く作りたい<br>
-            ・短納期で部品が欲しい
-          </td>
-          <td>
-            -
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="service-title">🔧 PC作業の自動化</div>
-            <p>Excelなどを使った定型業務を自動化し、作業効率を向上させます。</p>
-          </td>
-          <td>
-            ・事務作業を小さく改善したい
-          </td>
-          <td>
-            20万円
-          </td>
-        </tr>
 
-        <tr>
-          <td>
-            <div class="service-title">🤝 スポット相談</div>
-            <p>ちょっとした技術的な疑問や方向性の確認などを、対面でご相談いただけます。</p>
-          </td>
-          <td>
-            ・課題が曖昧であったり、どの技術を使えばいいかわからない
-          </td>
-          <td>
-            3万円/2h
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="service-title">🤝 技術顧問</div>
-            <p>IoT導入やDX推進を、定期的な面談を通じて伴走支援します。</p>
-          </td>
-          <td>
-            ・定期的なサポートが欲しい<br>
-            ・技術選定や現場改善、補助金申請等をまとめて頼みたい
-          </td>
-          <td>
-            -
-          </td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="price-list-container">
+    
+    <div class="price-card">
+      <div class="price-card-main">
+        <div class="service-title">🔧 現場データの見える化支援</div>
+        <p class="service-description">現場にセンサーを設置し、データの収集・処理・可視化までを一貫して支援します。ダッシュボード等を活用し、現場の状況をリアルタイムに“見える化”します。</p>
+        <button class="accordion-toggle price-toggle-btn">詳細を確認する</button>
+      </div>
+      <div class="accordion-content">
+        <div class="price-details-grid">
+          <div class="detail-block">
+            <h4>こんなお客様におすすめ</h4>
+            <ul>
+              <li>何から始めればいいかわからない</li>
+              <li>見える化したい/データを蓄積したい</li>
+            </ul>
+          </div>
+          <div class="detail-block price-block">
+            <h4>料金目安</h4>
+            <span class="price-value">50万円～</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="price-card">
+      <div class="price-card-main">
+        <div class="service-title">🤝 現場DX・内製化支援プログラム</div>
+        <p class="service-description">現場担当者向けに、座学と実技を組み合わせた8時間のカリキュラムで教育を行います。導入システムを現場の"道具"として定着させ、自社で運用・改善し続けられる体制を構築します。</p>
+        <button class="accordion-toggle price-toggle-btn">詳細を確認する</button>
+      </div>
+      <div class="accordion-content">
+        <div class="price-details-grid">
+          <div class="detail-block">
+            <h4>こんなお客様におすすめ</h4>
+            <ul>
+              <li>IoT人材を育てたい</li>
+              <li>現場から主体的に行動してもらいたい</li>
+              <li>DXで現場から会社を変革していきたい</li>
+            </ul>
+          </div>
+          <div class="detail-block price-block">
+            <h4>料金目安</h4>
+            <span class="price-value">15万円～</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="price-card">
+      <div class="price-card-main">
+        <div class="service-title">🔧 エッジデバイスの試作</div>
+        <p class="service-description">AI処理を組み込んだエッジデバイスの試作を行います。現場でセンサデータや画像データを自律的に処理し、即時の判断や制御が可能です。</p>
+        <button class="accordion-toggle price-toggle-btn">詳細を確認する</button>
+      </div>
+      <div class="accordion-content">
+        <div class="price-details-grid">
+          <div class="detail-block">
+            <h4>こんなお客様におすすめ</h4>
+            <ul>
+              <li>作業を自動化したい</li>
+              <li>AI技術を導入したい</li>
+              <li>オフラインで処理したい</li>
+            </ul>
+          </div>
+          <div class="detail-block price-block">
+            <h4>料金目安</h4>
+            <span class="price-value">60万円～</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="price-card">
+      <div class="price-card-main">
+        <div class="service-title">🔧 小規模自動化装置の試作</div>
+        <p class="service-description">マイコンを用いて、バルブやスイッチなどの操作を自動化する小規模装置を試作します。<br>
+          （※過酷な環境や長時間の連続稼働を想定される場合は、別途ご相談ください。）</p>
+        <button class="accordion-toggle price-toggle-btn">詳細を確認する</button>
+      </div>
+      <div class="accordion-content">
+        <div class="price-details-grid">
+          <div class="detail-block">
+            <h4>こんなお客様におすすめ</h4>
+            <ul>
+              <li>作業を自動化したい</li>
+              <li>現場の人手不足を解消したい</li>
+            </ul>
+          </div>
+          <div class="detail-block price-block">
+            <h4>料金目安</h4>
+            <span class="price-value">個別お見積り</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="price-card">
+      <div class="price-card-main">
+        <div class="service-title">📊 技術検証（IoT）</div>
+        <p class="service-description">見える化やデータ蓄積などのIoT技術について、本格導入前に効果を検証いただけます。</p>
+        <button class="accordion-toggle price-toggle-btn">詳細を確認する</button>
+      </div>
+      <div class="accordion-content">
+        <div class="price-details-grid">
+          <div class="detail-block">
+            <h4>こんなお客様におすすめ</h4>
+            <ul>
+              <li>新規技術を導入したいが、いきなりの高額投資はリスクが大きい</li>
+            </ul>
+          </div>
+          <div class="detail-block price-block">
+            <h4>料金目安</h4>
+            <span class="price-value">15万円～</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="price-card">
+      <div class="price-card-main">
+        <div class="service-title">📊 技術検証（AI）</div>
+        <p class="service-description">画像認識や異常検知などのAI技術について、本格導入前に効果を検証いただけます。</p>
+        <button class="accordion-toggle price-toggle-btn">詳細を確認する</button>
+      </div>
+      <div class="accordion-content">
+        <div class="price-details-grid">
+          <div class="detail-block">
+            <h4>こんなお客様におすすめ</h4>
+            <ul>
+              <li>新規技術を導入したいが、いきなりの高額投資はリスクが大きい</li>
+            </ul>
+          </div>
+          <div class="detail-block price-block">
+            <h4>料金目安</h4>
+            <span class="price-value">30万円～</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="price-card">
+      <div class="price-card-main">
+        <div class="service-title">🔧 筐体・治具設計</div>
+        <p class="service-description">3DCADを用いて、目的や使用環境に合わせた部品の設計を行います。</p>
+        <button class="accordion-toggle price-toggle-btn">詳細を確認する</button>
+      </div>
+      <div class="accordion-content">
+        <div class="price-details-grid">
+          <div class="detail-block">
+            <h4>こんなお客様におすすめ</h4>
+            <ul>
+              <li>設計を外注したい</li>
+              <li>3Dデータのみ必要</li>
+            </ul>
+          </div>
+          <div class="detail-block price-block">
+            <h4>料金目安</h4>
+            <span class="price-value">個別お見積り</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="price-card">
+      <div class="price-card-main">
+        <div class="service-title">🔧 3Dプリンタ造形</div>
+        <p class="service-description">樹脂素材による3Dプリント造形を行います。</p>
+        <button class="accordion-toggle price-toggle-btn">詳細を確認する</button>
+      </div>
+      <div class="accordion-content">
+        <div class="price-details-grid">
+          <div class="detail-block">
+            <h4>こんなお客様におすすめ</h4>
+            <ul>
+              <li>試作用の部品を安く作りたい</li>
+              <li>短納期で部品が欲しい</li>
+            </ul>
+          </div>
+          <div class="detail-block price-block">
+            <h4>料金目安</h4>
+            <span class="price-value">個別お見積り</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="price-card">
+      <div class="price-card-main">
+        <div class="service-title">🔧 PC作業の自動化</div>
+        <p class="service-description">Excelなどを使った定型業務を自動化し、作業効率を向上させます。</p>
+        <button class="accordion-toggle price-toggle-btn">詳細を確認する</button>
+      </div>
+      <div class="accordion-content">
+        <div class="price-details-grid">
+          <div class="detail-block">
+            <h4>こんなお客様におすすめ</h4>
+            <ul>
+              <li>事務作業を小さく改善したい</li>
+            </ul>
+          </div>
+          <div class="detail-block price-block">
+            <h4>料金目安</h4>
+            <span class="price-value">20万円～</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="price-card">
+      <div class="price-card-main">
+        <div class="service-title">🤝 スポット相談</div>
+        <p class="service-description">ちょっとした技術的な疑問や方向性の確認などを、対面でご相談いただけます。</p>
+        <button class="accordion-toggle price-toggle-btn">詳細を確認する</button>
+      </div>
+      <div class="accordion-content">
+        <div class="price-details-grid">
+          <div class="detail-block">
+            <h4>こんなお客様におすすめ</h4>
+            <ul>
+              <li>課題が曖昧であったり、どの技術を使えばいいかわからない</li>
+            </ul>
+          </div>
+          <div class="detail-block price-block">
+            <h4>料金目安</h4>
+            <span class="price-value">3万円/2h</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="price-card">
+      <div class="price-card-main">
+        <div class="service-title">🤝 技術顧問</div>
+        <p class="service-description">IoT導入やDX推進を、定期的な面談を通じて伴走支援します。</p>
+        <button class="accordion-toggle price-toggle-btn">詳細を確認する</button>
+      </div>
+      <div class="accordion-content">
+        <div class="price-details-grid">
+          <div class="detail-block">
+            <h4>こんなお客様におすすめ</h4>
+            <ul>
+              <li>定期的なサポートが欲しい</li>
+              <li>技術選定や現場改善、補助金申請等をまとめて頼みたい</li>
+            </ul>
+          </div>
+          <div class="detail-block price-block">
+            <h4>料金目安</h4>
+            <span class="price-value">個別お見積り</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
   <p>✔ これらの価格は今後変動する可能性があります。</p>
-  <p>✔ 価格の記載のないサービスは、お客様ごとの見積もりとなります。お気軽にお問い合わせください。</p>
 </section>
 
-<section class="works">
+<section class="works" id="works">
   <div class="section-title">
     <svg width="50" height="50" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#0055aa">
       <path d="M15 12V16.4C15 16.7314 14.7314 17 14.4 17H3.6C3.26863 17 3 16.7314 3 16.4V7.6C3 7.26863 3.26863 7 3.6 7H14.4C14.7314 7 15 7.26863 15 7.6V12ZM15 12L20.0159 7.82009C20.4067 7.49443 21 7.77232 21 8.28103V15.719C21 16.2277 20.4067 16.5056 20.0159 16.1799L15 12Z" stroke="#0055aa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -478,7 +580,12 @@
 <script>
 document.querySelectorAll('.accordion-toggle').forEach(button => {
   button.addEventListener('click', () => {
-    const content = button.nextElementSibling;
+    // ボタンの親要素（.accordion または .price-card）の中からコンテンツを探す
+    const parent = button.closest('.accordion') || button.closest('.price-card');
+    const content = parent.querySelector('.accordion-content');
+    
+    if (!content) return;
+
     const isOpen = content.classList.contains('open');
 
     // 他を全部閉じる処理
@@ -486,18 +593,35 @@ document.querySelectorAll('.accordion-toggle').forEach(button => {
       c.classList.remove('open');
       c.style.maxHeight = null;
       // ボタン側のクラスも外す
-      c.previousElementSibling.classList.remove('active');
+      const b = c.closest('.accordion, .price-card').querySelector('.accordion-toggle');
+      if (b) b.classList.remove('active');
     });
 
     // 今回クリックしたところを開く
     if (!isOpen) {
       content.classList.add('open');
       content.style.maxHeight = content.scrollHeight + "px";
-      button.classList.add('active'); // ボタンにも目印をつける
+      button.classList.add('active');
     }
   });
 });
-</script>
 
+// スクロールでメニューを隠す/表示する機能（お好みで）
+let lastScrollTop = 0;
+window.addEventListener("scroll", () => {
+  const menu = document.querySelector('.side-menu');
+  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  
+  if (scrollTop > lastScrollTop && scrollTop > 100) {
+    menu.classList.add('hidden'); // 下にスクロールで隠す
+  } else {
+    menu.classList.remove('hidden'); // 上にスクロールで表示
+  }
+  lastScrollTop = scrollTop;
+});
+
+</script>
+</main>
+</div>
 </body>
 </html>
