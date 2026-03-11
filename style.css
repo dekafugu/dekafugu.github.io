@@ -1,6 +1,6 @@
-/* ===========================
-   基本設定
-=========================== */
+/* ==========================================================================
+   1. 基本設定・グローバル
+   ========================================================================== */
 body {
   font-family: sans-serif;
   line-height: 1.8;
@@ -10,178 +10,15 @@ body {
   background: #ffffff;
 }
 
-/* ===========================
-   ヒーロー部分
-=========================== */
-.hero {
-  position: relative;
-  z-index: 0;
-  background: linear-gradient(
-    to left, /* ← ここを left にして反転！ */
-    #e6d9b0 0%,
-    #6bb3c9 45%,
-    #685f91 80%
-  );
-  color: #fff;
-  text-align: center;
-  padding: 140px 20px;
-  overflow: hidden;
+html {
+  scroll-behavior: smooth;
 }
 
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    url("data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'>\
-<filter id='n'>\
-<feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/>\
-</filter>\
-<rect width='100%' height='100%' filter='url(#n)' opacity='0.04'/>\
-</svg>"),
-    repeating-linear-gradient(
-      to right,
-      rgba(255,255,255,0.04) 0px,
-      rgba(255,255,255,0.04) 20px,
-      rgba(255,255,255,0) 140px,
-      rgba(255,255,255,0.04) 150px
-    );
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  pointer-events: none;
-  background: linear-gradient(
-    to right,
-    rgba(255,255,255,0.15) 10%,
-    rgba(255,255,255,0) 30%
-  );
-}
-
-/* 屋号（メインタイトル） */
-.hero h1 {
-  font-size: 3.2rem; /* 少し大きくしてもいいかも */
-  margin-bottom: 30px;
-  font-weight: 700;
-}
-
-/* --- ヒーロー専用のh2設定（追加・修正） --- */
-.hero h2.hero-copy {
-  /* 下線や青色をリセット */
-  color: #fff;           /* 白文字に戻す */
-  display: block;        /* inline-blockを解除 */
-  padding-bottom: 0;
-  margin-bottom: 20px;
-  
-  /* フォントサイズと太さの調整 */
-  font-size: 1.8rem;
-  font-weight: 500;
-  line-height: 1.4;
-}
-
-/* ヒーロー内のh2には下線アニメーションをつけない設定 */
-.hero h2.hero-copy::after {
-  content: none; /* 下線の棒を消す */
-}
-
-/* ついでにマウスホバー時の挙動も無効化しておくと安心 */
-.hero h2.hero-copy:hover::after {
-  width: 0%;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  opacity: 0.95;
-}
-
-.cta {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 12px 28px;
-  border: 2px solid #ffffff;
-  color: #ffffff;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: 0.3s;
-}
-
-.cta:hover {
-  background: #ffffff;
-  color: #0A1A2F;
-}
-
-.cta-group {
-  display: flex;
-  justify-content: center;
-  gap: 16px; /* ← ここでボタンの間隔を調整！ */
-  flex-wrap: wrap; /* スマホで折り返しもOKに */
-  margin-top: 30px;
-}
-
-.hero-divider {
-  display: block;
-  width: 160px;
-  height: 2px;
-  background-color: #ffffff;
-  border: none;
-  margin: 20px auto;
-  opacity: 0.6;
-}
-
-.hero-divider2 {
-  display: block;
-  width: 160px;
-  height: 1px;
-  background-color: #999999;
-  border: none;
-  margin: 60px auto;
-  opacity: 0.6;
-}
-
-@keyframes focusIn {
-  0% {
-    opacity: 0;
-    filter: blur(12px);
-    transform: scale(1.1);
-  }
-  100% {
-    opacity: 1;
-    filter: blur(0);
-    transform: scale(1);
-  }
-}
-
-.focus-in {
-  opacity: 0;
-  animation: focusIn 1s ease-out forwards;
-}
-
-
-/* ===========================
-   セクション
-=========================== */
-section {
+section,
+.story {
   padding: 60px 40px;
-  max-width: 1000px;
+  max-width: 800px;
   margin: auto;
-  border-radius: 8px;
-  box-shadow: none !important;
-}
-
-@media (max-width: 768px) { 
-   .hero h1 { font-size: 2.2rem; }
-   .hero .hero-copy { font-size: 1.3rem; }
-   section { 
-      padding: 40px 20px;
-      max-width: 100%; 
-   } 
 }
 
 section:nth-of-type(odd) {
@@ -192,355 +29,28 @@ section:nth-of-type(even) {
   background: linear-gradient(120deg, #e9ecef, #f1f3f5);
 }
 
-section:hover {
+section {
+  border-radius: 8px;
   box-shadow: none !important;
 }
 
-/* ご依頼の流れセクション（点線復活＆カード版） */
-.flow-container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 60px 20px;
+/* 共通リンク */
+a {
+  color: #0078ff;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-.detailed-flow {
-  position: relative; /* 点線の基準にする */
+a:hover {
+  color: #005fcc;
+  text-decoration: underline;
 }
 
-/* 縦の点線：擬似要素で作る */
-.detailed-flow::before {
-  content: "";
-  position: absolute;
-  left: 43px; /* ステップ番号の中心に合わせる */
-  top: 20px;
-  bottom: 20px;
-  width: 2px;
-  border-left: 2px dashed #0055aa; /* ここが復活した点線だお！ */
-  z-index: 0;
-}
-
-.detailed-flow .step-item {
-  position: relative;
-  z-index: 1; /* 点線より上にカードを出す */
-  padding: 25px 30px 25px 85px; /* 左側に番号分のスペースを確保 */
-  margin-bottom: 40px; /* ステップ間の隙間 */
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 85, 170, 0.08);
-  border: 1px solid #eef2f6;
-  transition: transform 0.3s ease;
-}
-
-.detailed-flow .step-item:hover {
-  transform: translateX(10px); /* 横にスライドする動きで「進む感」を出す */
-}
-
-/* ステップ番号を点線の真上に配置 */
-.detailed-flow .step-num {
-  position: absolute;
-  left: 19px;
-  top: 50%;
-  transform: translateY(-50%); /* カードの高さ中央に配置 */
-  background-color: #0055aa;
-  color: #fff;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  font-weight: bold;
-  border: 4px solid #f9f9f9; /* 背景色と同じ色で縁取りして点線を隠す */
-}
-
-/* タイトルと説明文 */
-.detailed-flow .step-item h3 {
-  margin: 0 0 8px 0;
-  font-size: 1.2rem;
-  color: #0055aa;
-}
-
-.detailed-flow .step-item p {
-  margin: 0;
-  font-size: 0.95rem;
-  color: #444;
-  line-height: 1.6;
-}
-
-/* PoCステップの特別色 */
-/* 4番だけの色変更を削除して統一 */
-.PoC-step {
-  border: 1px solid #eef2f6 !important;
-  background-color: #fff !important;
-}
-
-.PoC-step .step-num {
-  background-color: #0055aa;
-}
-
-/* 「重要！」ラベルの装飾（これならクリック感が出ない） */
-.step-badge {
-  display: inline-block;
-  background: #ff9900;
-  color: #fff;
-  font-size: 0.75rem;
-  font-weight: bold;
-  padding: 2px 8px;
-  border-radius: 4px;
-  margin-bottom: 8px;
-  vertical-align: middle;
-}
-
-/* 最後のステップの余白 */
-.detailed-flow .step-item:last-child {
-  margin-bottom: 0;
-}
-
-/* スマホ表示の微調整 */
-@media (max-width: 768px) {
-  .detailed-flow::before {
-    left: 33px;
-  }
-  .detailed-flow .step-item {
-    padding-left: 70px;
-  }
-  .detailed-flow .step-num {
-    left: 13px;
-    width: 40px;
-    height: 40px;
-  }
-}
-
-/* 時間軸のスタイリング */
-.step-time {
-  font-size: 0.85rem;
-  font-weight: bold;
-  color: #0055aa;
-  background: #eef2f6;
-  display: inline-block;
-  padding: 2px 10px;
-  border-radius: 20px;
-  margin-bottom: 5px;
-}
-
-/* 4番のバッジと時間軸を並べるための調整 */
-.step-item .step-badge {
-  margin-left: 5px;
-  margin-bottom: 5px; /* 時間軸と同じに合わせる */
-}
-
-/* --- アコーディオン全体 --- */
-.accordion {
-  margin-bottom: 15px;
-  border-radius: 4px;
-  overflow: hidden; /* 角丸をはみ出さないように */
-}
-
-/* --- ボタン部分（左に濃い青バー） --- */
-.accordion-toggle {
-  background-color: #ffffff;
-  color: #0055aa;
-  padding: 1.2em;
-  width: 100%;
-  text-align: left;
-  border: 1px solid #e0eaf5;
-  border-left: 6px solid #0055aa; /* ★ここが濃い青の縦バー */
-  font-size: 1.1em;
-  font-weight: bold;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: background-color 0.3s;
-  position: relative; /* 子要素の基準にする */
-  padding-right: 50px; /* 右側のアイコン分のスペースを確保 */
-}
-
-/* --- 【重要】開いているとき（隣のcontentに.openがあるとき）の設定 --- */
-/* JSで.accordion-contentに.openがつく構造に合わせます */
-.accordion-content.open + .accordion-toggle::after {
-  content: '－'; /* マイナスに切り替え */
-  transform: rotate(180deg); /* 動きをつけて「変わった感」を出す */
-}
-
-/* 共通のアイコン設定 */
-.accordion-toggle::after {
-  content: '＋';
-  position: absolute;
-  right: 20px;
-  font-size: 1.2rem;
-  color: #0055aa;
-  transition: transform 0.3s ease;
-}
-
-.accordion-toggle:hover {
-  background-color: #f0f7ff;
-}
-
-/* ボタンが active（開いている状態）のとき */
-.accordion-toggle.active::after {
-  content: '－';
-}
-
-/* --- 開いた時の中身（薄い青の塗りつぶし） --- */
-.accordion-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease;
-  background-color: #f5faff;
-  border-left: 6px solid #0055aa;
-  /* ここで padding を 0 に固定するのが鉄則！ */
-  padding: 0 !important; 
-}
-
-.accordion-content.open {
-  /* max-heightはJSで制御されます */
-}
-
-/* --- 事例カード内の装飾 --- */
-.case-card {
-  /* 外枠の padding は消して、上下に少し余裕を持たせる */
-  border-right: 1px solid #e0eaf5;
-  border-bottom: 1px solid #e0eaf5;
-  display: block;
-}
-
-.case-card p {
-  margin: 0;
-  padding: 10px 20px; /* 文字の上下左右に余白を作る */
-  line-height: 1.6;
-}
-
-/* 最初の p タグだけ、上の余白を少し多めにする（見た目の調整） */
-.case-card p:first-child {
-  padding-top: 20px;
-}
-
-/* 最後の p タグだけ、下の余白を少し多めにする */
-.case-card p:last-child {
-  padding-bottom: 20px;
-}
-
-.case-card strong {
-  display: inline-block;
-  min-width: 60px;
-  text-align: center;
-  color: #fff;
-  padding: 2px 10px;
-  border-radius: 3px;
-  margin-right: 10px;
-  font-size: 0.85em;
-}
-
-/* 課題・解決・効果の色分け */
-.case-card p:nth-child(1) strong { background-color: #d9534f; } /* 課題：赤系 */
-.case-card p:nth-child(2) strong { background-color: #0055aa; } /* 解決：青系 */
-.case-card p:nth-child(3) strong { background-color: #5cb85c; } /* 効果：緑系 */
-
-.price-table table {
-  width: 100%;
-  border-collapse: collapse;
-  background: #fff;
-  color: #333;
-}
-
-.price-table th {
-  border: 1px solid #ccc;
-  padding: 12px;
-  text-align: left;
-}
-
-.price-table td {
-  border: 1px solid #ccc;
-  padding: 12px;
-  text-align: left;
-  padding: 16px 16px;
-  line-height: 1.8;
-  font-size: 15px;
-  vertical-align: top;
-  white-space: normal;
-  word-break: break-word;
-}
-
-.price-table th {
-  background-color: #f0f0f0;
-  font-weight: bold;
-}
-
-.price-table tr:nth-child(even) {
-  background-color: #fafafa;
-}
-
-.price-table td:nth-child(2),
-.price-table th:nth-child(2) {
-  width: 300px; /* ← 好きな幅に調整してね！ */
-}
-
-.price-table td:nth-child(3),
-.price-table th:nth-child(3) {
-  width: 100px; /* ← 好きな幅に調整してね */
-  white-space: nowrap; /* テキストの折り返しを防ぐならこれも */
-}
-
-.price-table td .service-title {
-  background-color: #f5faff;
-  padding: 6px 10px;
-  font-weight: bold;
-  border-radius: 4px;
-  margin-bottom: 6px;
-  display: inline-block;
-}
-
-.case-list {
-  line-height: 2;
-  list-style-type: none;
-  counter-reset: case-counter;
-  padding-left: 1.5em;
-}
-
-.case-list li {
-  counter-increment: case-counter;
-  position: relative;
-  margin-bottom: 2em;
-}
-
-.case-list li::before {
-  content: "①";
-  counter-increment: none;
-  position: absolute;
-  left: -1.5em;
-  font-weight: bold;
-}
-.case-list li:nth-child(2)::before { content: "②"; }
-.case-list li:nth-child(3)::before { content: "③"; }
-.case-list li:nth-child(4)::before { content: "④"; }
-.case-list li:nth-child(5)::before { content: "⑤"; }
-
-.story { padding: 4em 1em; }
-
-section,
-.story {
-  padding: 60px 40px;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.section-title {
-  display: flex;
-  align-items: center;
-  gap: 1.0em; /* アイコンとテキストの間隔 */
-}
-
-.section-title svg {
-  flex-shrink: 0;
-}
-
-/* ===========================
-   見出し
-=========================== */
+/* ==========================================================================
+   2. 見出し・装飾パーツ
+   ========================================================================== */
 h1 {
-  font-size: 1.6em; /* ← ここでサイズ調整 */
+  font-size: 1.6em;
   padding-bottom: 0.3em;
 }
 
@@ -567,6 +77,16 @@ h2:hover::after {
   width: 100%;
 }
 
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 1.0em;
+}
+
+.section-title svg {
+  flex-shrink: 0;
+}
+
 .left-divider {
   display: block;
   width: 160px;
@@ -577,22 +97,490 @@ h2:hover::after {
   opacity: 0.6;
 }
 
-/* ===========================
-   リンク
-=========================== */
-a {
-  color: #0078ff;
+/* ==========================================================================
+   3. ヒーローセクション & フッター
+   ========================================================================== */
+.hero,
+footer {
+  position: relative;
+  z-index: 0;
+  color: #fff;
+  text-align: center;
+  padding: 140px 20px;
+  overflow: hidden;
+}
+
+.hero {
+  background: linear-gradient(
+    to left,
+    #e6d9b0 0%,
+    #6bb3c9 45%,
+    #685f91 80%
+  );
+}
+
+footer {
+  background: linear-gradient(
+    to left,
+    #685f91 0%,
+    #6bb3c9 45%,
+    #e6d9b0 80%
+  );
+}
+
+.hero::before,
+footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/></filter><rect width='100%' height='100%' filter='url(#n)' opacity='0.04'/></svg>"),
+    repeating-linear-gradient(
+      to right,
+      rgba(255,255,255,0.04) 0px,
+      rgba(255,255,255,0.04) 20px,
+      rgba(255,255,255,0) 140px,
+      rgba(255,255,255,0.04) 150px
+    );
+}
+
+.hero::after,
+footer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background: linear-gradient(
+    to right,
+    rgba(255,255,255,0.15) 10%,
+    rgba(255,255,255,0) 30%
+  );
+}
+
+.hero h1 {
+  font-size: 3.2rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.hero h2.hero-copy {
+  color: #fff;
+  display: block;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.hero h2.hero-copy::after {
+  content: none;
+}
+
+.hero h2.hero-copy:hover::after {
+  width: 0%;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.95;
+}
+
+.hero-divider,
+.footer-divider {
+  display: block;
+  width: 160px;
+  height: 2px;
+  background-color: #ffffff;
+  border: none;
+  margin: 20px auto;
+  opacity: 0.6;
+}
+
+.hero-divider2 {
+  display: block;
+  width: 160px;
+  height: 1px;
+  background-color: #999999;
+  border: none;
+  margin: 60px auto;
+  opacity: 0.6;
+}
+
+.cta-group {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 28px;
+  border: 2px solid #ffffff;
+  color: #ffffff;
   text-decoration: none;
-  transition: color 0.2s ease;
+  border-radius: 6px;
+  transition: 0.3s;
 }
 
-a:hover {
-  color: #005fcc;
-  text-decoration: underline;
+.cta:hover {
+  background: #ffffff;
+  color: #0A1A2F;
 }
 
-html {
-  scroll-behavior: smooth;
+/* アニメーション */
+@keyframes focusIn {
+  0% { opacity: 0; filter: blur(12px); transform: scale(1.1); }
+  100% { opacity: 1; filter: blur(0); transform: scale(1); }
+}
+
+@keyframes pyon {
+  0%   { transform: translateY(0); }
+  40%  { transform: translateY(-12px); }
+  65%  { transform: translateY(4px); }
+  85%  { transform: translateY(-3px); }
+  100% { transform: translateY(0); }
+}
+
+.focus-in {
+  opacity: 0;
+  animation: focusIn 1s ease-out forwards;
+}
+
+/* ==========================================================================
+   4. ご依頼の流れ (Flow)
+========================================================================== */
+.flow-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.detailed-flow {
+  position: relative;
+}
+
+.detailed-flow::before {
+  content: "";
+  position: absolute;
+  left: 43px;
+  top: 20px;
+  bottom: 20px;
+  width: 2px;
+  border-left: 2px dashed #0055aa;
+  z-index: 0;
+}
+
+.detailed-flow .step-item {
+  position: relative;
+  z-index: 1;
+  padding: 25px 30px 25px 85px;
+  margin-bottom: 40px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 85, 170, 0.08);
+  border: 1px solid #eef2f6;
+  transition: transform 0.3s ease;
+}
+
+.detailed-flow .step-item:hover {
+  transform: translateX(10px);
+}
+
+.detailed-flow .step-num {
+  position: absolute;
+  left: 19px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #0055aa;
+  color: #fff;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: 4px solid #f9f9f9;
+}
+
+.detailed-flow .step-item h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.2rem;
+  color: #0055aa;
+}
+
+.detailed-flow .step-item p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.PoC-step {
+  border: 1px solid #eef2f6 !important;
+  background-color: #fff !important;
+}
+
+.step-badge {
+  display: inline-block;
+  background: #ff9900;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  vertical-align: middle;
+}
+
+.step-time {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #0055aa;
+  background: #eef2f6;
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 20px;
+  margin-bottom: 5px;
+}
+
+.step-item .step-badge {
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+
+.detailed-flow .step-item:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   5. アコーディオン (共通動作 & 事例)
+========================================================================== */
+.accordion {
+  margin-bottom: 15px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.accordion-toggle {
+  background-color: #ffffff;
+  color: #0055aa;
+  padding: 1.2em;
+  width: 100%;
+  text-align: left;
+  border: 1px solid #e0eaf5;
+  border-left: 6px solid #0055aa;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s;
+  position: relative;
+  padding-right: 50px;
+}
+
+.accordion-toggle::after {
+  content: '＋';
+  position: absolute;
+  right: 20px;
+  font-size: 1.2rem;
+  color: #0055aa;
+  transition: transform 0.3s ease;
+}
+
+.accordion-toggle:hover {
+  background-color: #f0f7ff;
+}
+
+.accordion-toggle.active::after {
+  content: '－';
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  background-color: #f5faff;
+  border-left: 6px solid #0055aa;
+  padding: 0 !important; 
+}
+
+/* 事例カード */
+.case-card {
+  border-right: 1px solid #e0eaf5;
+  border-bottom: 1px solid #e0eaf5;
+  display: block;
+}
+
+.case-card p {
+  margin: 0;
+  padding: 10px 20px;
+  line-height: 1.6;
+}
+
+.case-card p:first-child { padding-top: 20px; }
+.case-card p:last-child { padding-bottom: 20px; }
+
+.case-card strong {
+  display: inline-block;
+  min-width: 60px;
+  text-align: center;
+  color: #fff;
+  padding: 2px 10px;
+  border-radius: 3px;
+  margin-right: 10px;
+  font-size: 0.85em;
+}
+
+.case-card p:nth-child(1) strong { background-color: #d9534f; }
+.case-card p:nth-child(2) strong { background-color: #0055aa; }
+.case-card p:nth-child(3) strong { background-color: #5cb85c; }
+
+/* ==========================================================================
+   6. サービス・料金表
+========================================================================== */
+.price-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  color: #333;
+}
+
+.price-table th, .price-table td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: left;
+  line-height: 1.8;
+  font-size: 15px;
+  vertical-align: top;
+  word-break: break-word;
+}
+
+.price-table th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+.price-table tr:nth-child(even) { background-color: #fafafa; }
+
+.price-table td:nth-child(2), .price-table th:nth-child(2) { width: 300px; }
+.price-table td:nth-child(3), .price-table th:nth-child(3) { width: 100px; white-space: nowrap; }
+
+.price-table td .service-title {
+  background-color: #f5faff;
+  padding: 6px 10px;
+  font-weight: bold;
+  border-radius: 4px;
+  margin-bottom: 6px;
+  display: inline-block;
+}
+
+.price-badge {
+  font-weight: bold;
+  color: #0055aa;
+  background: #eef6ff;
+  padding: 2px 10px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.price-notes {
+  margin-top: 20px;
+  font-size: 0.85em;
+  color: #666;
+}
+
+/* サービスカード（新）用設定 */
+.price-card {
+  background: #ffffff;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  overflow: hidden;
+  border-left: none !important;
+  border: 1px solid #e0e0e0 !important; /* 全体を薄い枠で囲む */
+}
+
+.price-card-main { padding: 20px; }
+
+.price-toggle-btn {
+  background: #f8f9fa !important;
+  color: #0055aa !important;
+  border: 1px solid #0055aa !important;
+  font-size: 0.9em !important;
+  padding: 8px 15px !important;
+  width: auto !important;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.price-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+  background: #fcfcfc;
+  border-top: 1px dashed #ddd;
+}
+
+.detail-block h4 {
+  margin-bottom: 10px;
+  color: #444;
+  font-size: 1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+.price-block {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.price-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0055aa;
+}
+
+/* ==========================================================================
+   7. その他 (2カラム・動画・ブレイク画像)
+========================================================================== */
+.two-col {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.two-col.reverse { flex-direction: row-reverse; }
+.two-col .text { flex: 1; }
+
+.two-col .text p, .two-col .text li {
+  line-height: 1.9;
+  margin-bottom: 12px;
+}
+
+.two-col .image img {
+  width: 260px;
+  border-radius: 6px;
+  box-shadow: none !important;
+}
+
+.two-col img:hover {
+  animation: pyon 0.45s ease-out 1;
+  cursor: pointer; /* マウスを乗せた時に指アイコンにして変化を分かりやすく */
 }
 
 .video-scroll {
@@ -613,87 +601,26 @@ html {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* ===========================
-   文章＋画像の2カラム
-=========================== */
-.two-col {
-  display: flex;
-  gap: 30px;
-  align-items: center;
-}
-
-.two-col.reverse {
-  flex-direction: row-reverse;
-}
-
-.two-col .text {
-  flex: 1;
-}
-
-.two-col .text p,
-.two-col .text li {
-  line-height: 1.9;
-  margin-bottom: 12px;
-}
-
-.two-col .image img {
-  width: 260px;
-  border-radius: 6px;
-  box-shadow: none !important;
-  transition: none;
-}
-
-@keyframes pyon {
-  0%   { transform: translateY(0); }
-  40%  { transform: translateY(-12px); }
-  65%  { transform: translateY(4px); }
-  85%  { transform: translateY(-3px); }
-  100% { transform: translateY(0); }
-}
-
-.two-col .image img:hover {
-  animation: pyon 0.45s ease-out 1;
-}
-
-@media (max-width: 700px) {
-  .two-col,
-  .two-col.reverse {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .two-col .image img {
-    width: 80%;
-    max-width: 300px;
-  }
-}
-
-/* ===========================
-   途中挟む画像
-=========================== */
 .photon-break {
   position: relative;
-  max-width: 1000px;
-  margin: 30px auto; /* 上下に余白を追加 */
-  height: 300px;
+  max-width: 880px;
+  margin: 20px auto; /* 上下の余白を少し詰める */
+  height: auto;      /* 固定高さを解除して内容に合わせる */
   overflow: hidden;
   border-radius: 8px;
 }
 
 .photon-break img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 100%;       /* 800px幅まで広がる */
+  height: auto;      /* 高さは比率に合わせて自動調整 */
   display: block;
+  margin: 0 auto;
 }
 
 .photon-break::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: linear-gradient(
     to bottom,
     rgba(255,255,255,0.7) 0%,
@@ -704,70 +631,266 @@ html {
   pointer-events: none;
 }
 
-/* ===========================
-   フッター
-=========================== */
-footer {
-  position: relative;
-  z-index: 0;
-  background: linear-gradient(
-    to left, /* ← ここを left にして反転！ */
-    #685f91 0%,
-    #6bb3c9 45%,
-    #e6d9b0 80%
-  );
-  color: #fff;
-  text-align: center;
-  padding: 140px 20px;
-  overflow: hidden;
+/* ==========================================================================
+   8. レスポンシブ
+========================================================================== */
+@media (max-width: 768px) { 
+  .hero h1 { font-size: 2.2rem; }
+  .hero .hero-copy { font-size: 1.3rem; }
+  section { padding: 40px 20px; max-width: 100%; }
+
+  .detailed-flow::before { left: 33px; }
+  .detailed-flow .step-item { padding-left: 70px; }
+  .detailed-flow .step-num { left: 13px; width: 40px; height: 40px; }
+
+  /* 料金テーブルのレスポンシブ */
+  .price-table table, .price-table thead, .price-table tbody, .price-table th, .price-table td, .price-table tr {
+    display: block;
+  }
+  .price-table thead { display: none; }
+  .price-table tr {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fff;
+  }
+  .price-table td:nth-child(3) {
+    font-size: 1.2rem;
+    color: #0055aa;
+    font-weight: bold;
+    border-top: 1px solid #eee;
+    margin-top: 10px;
+    padding-top: 10px;
+  }
 }
 
+@media (max-width: 700px) {
+  .two-col, .two-col.reverse { flex-direction: column; align-items: center; }
+  .two-col .image img { width: 80%; max-width: 300px; }
+}
 
-footer::before {
-  content: "";
+@media (max-width: 600px) {
+  .price-details-grid { grid-template-columns: 1fr; }
+}
+
+/* --- 料金表アコーディオン修正（末尾に追加） --- */
+
+/* 1. アコーディオンの開閉動作を有効化するため、料金表ボタンに事例用クラスの特性を付与 */
+.price-toggle-btn.accordion-toggle {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    position: relative !important;
+    cursor: pointer !important;
+    /* 文字と＋アイコンの被りを防ぐための右余白確保 */
+    padding-right: 50px !important; 
+}
+
+/* 2. ＋アイコンの表示と位置調整 */
+.price-toggle-btn.accordion-toggle::after {
+    content: '＋';
+    position: absolute;
+    right: 15px;
+    font-size: 1.2rem;
+    color: #0055aa;
+    transition: transform 0.3s ease;
+}
+
+/* 開いた時に－へ切り替えるための設定 */
+.price-toggle-btn.accordion-toggle.active::after {
+    content: '－';
+}
+
+/* 料金表の中身をJSで制御可能にする */
+.price-card .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    padding: 0 !important;
+}
+
+/* --- サービス名を見やすくするための強調修正 --- */
+
+.price-card-main .service-title {
+    font-size: 1.2rem !important; /* 少し大きく */
+    font-weight: 800 !important;   /* 太字を強調 */
+    background: #eef6ff !important; /* 背景色を薄く設定 */
+
+    border-left: none !important;
+    background-color: #f0f7ff !important;
+    padding: 10px 15px !important;
+    border-radius: 4px !important;
+    font-weight: bold !important;
+    color: #0055aa !important;
+    display: block !important;
+    margin-bottom: 15px !important;
+}
+
+.price-card-main .service-description {
+    margin-top: 5px !important;
+    padding: 0 5px !important;
+    line-height: 1.7 !important;
+    color: #555 !important;
+}
+
+/* --- サービスカードの縦線削除とスタイルの整理 --- */
+
+/* 1. カード全体の左縦線を消去 */
+
+
+/* 2. サービス名（タイトル）の縦線も消去し、背景色でブロック感を出す */
+
+
+/* 3. 説明文の読みやすさを調整 */
+.service-description {
+    padding: 0 5px !important;
+    line-height: 1.7 !important;
+    color: #444 !important;
+}
+
+/* サイト全体を横並びにする */
+.site-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* 1. メニュー全体の透過を最大化 */
+.side-menu {
+  width: 240px;
+  position: fixed;
+  left: -230px;
+  top: 0;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.1); /* 透過率を大幅アップ */
+  backdrop-filter: blur(30px); /* ぼかしを強めて質感を維持 */
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(0, 85, 170, 0.2);
+  border-radius: 0 16px 16px 0;
+  transition: left 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: 1000;
+}
+
+/* 展開時は左端へスライド */
+.side-menu:hover {
+  left: 0;
+}
+
+/* ハンバーガーアイコンのスタイル */
+.menu-trigger {
   position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    url("data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'>\
-<filter id='n'>\
-<feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/>\
-</filter>\
-<rect width='100%' height='100%' filter='url(#n)' opacity='0.04'/>\
-</svg>"),
-    repeating-linear-gradient(
-      to right,
-      rgba(255,255,255,0.04) 0px,
-      rgba(255,255,255,0.04) 20px,
-      rgba(255,255,255,0) 140px,
-      rgba(255,255,255,0.04) 150px
-    );
+  right: -40px;
+  top: 20px;
+  width: 40px;
+  height: 40px;
+  background: #ffffff;
+  color: #0055aa;
+  
+  /* メニュー本体と同じ縁取りを設定して一体感を出す */
+  border: 1px solid rgba(0, 85, 170, 0.3);
+  border-left: none; /* メニュー本体と重なる部分は線を消す */
+  border-radius: 0 8px 8px 0;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
 }
 
-footer::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  pointer-events: none;
-  background: linear-gradient(
-    to right,
-    rgba(255,255,255,0.15) 10%,
-    rgba(255,255,255,0) 30%
-  );
+/* メインコンテンツへの影響をなくす */
+.main-content {
+  flex: 1;
+  margin-left: 10px; /* メニューの隙間分だけ余白 */
+  transition: margin-left 0.4s ease;
 }
 
-.footer-divider {
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-menu li {
+  margin-bottom: 20px;
+}
+
+.side-menu a {
+  color: #0055aa;
+  font-weight: bold;
   display: block;
-  width: 160px;
-  height: 2px;
-  background-color: #ffffff;
-  border: none;
-  margin: 20px auto;
-  opacity: 0.6;
+  padding: 10px;
+  border-radius: 4px;
 }
 
+.side-menu a:hover {
+  background: #eef6ff;
+  text-decoration: none;
+}
 
+/* メインコンテンツの幅を調整 */
+.main-content {
+  flex: 1; /* 残りの幅をすべて使う */
+  overflow-x: hidden;
+}
 
+/* レスポンシブ対応：画面が狭いときはメニューを上部に隠す */
+@media (max-width: 900px) {
+  .site-wrapper {
+    flex-direction: column;
+  }
+  .side-menu {
+    width: 100%;
+    height: auto;
+    position: relative;
+    border-right: none;
+    border-bottom: 1px solid #e0eaf5;
+    text-align: center;
+  }
+  .side-menu ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+/* --- 修正：CSSの競合を解消してデザインを確定させる --- */
+.side-menu ul {
+  list-style: none !important;
+  padding: 80px 25px 0 25px !important;
+}
+
+.side-menu li {
+  margin-bottom: 10px !important;
+}
+
+/* リンクの基本スタイル（ドットを表示） */
+.side-menu a {
+  position: relative;
+  display: block;
+  padding: 12px 20px 12px 35px;
+  color: #0055aa;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 85, 170, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* 疑似要素でドットを配置 */
+.side-menu a::before {
+  content: "-"; /* ここをドットに */
+  position: absolute;
+  left: 15px;
+  top:35%;
+  font-size: 0.6rem;
+  color: #0055aa;
+  transition: all 0.2s ease; /* 変化をスムーズに */
+}
+
+/* ホバー時に▶に切り替える */
+.side-menu a:hover::before {
+  content: "▶"; /* ホバーで矢印に変化 */
+  font-size: 0.7rem; /* 矢印は少し大きくしてもOK */
+  color: #0078ff;
+  transform: translateY(-10%) translateX(2px); /* 少し右に動かす */
+}
