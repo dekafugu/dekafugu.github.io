@@ -446,6 +446,23 @@ footer::after {
 .case-card p:nth-child(2) strong { background-color: #0055aa; }
 .case-card p:nth-child(3) strong { background-color: #5cb85c; }
 
+/* 比較リザルト：最小構成版 */
+.comparison-row { display: flex; align-items: center; gap: 20px; padding: 20px 0; border-bottom: 2px solid #f0f0f0; }
+.comparison-row .val-box { display: flex; flex-direction: column; align-items: center; min-width: 100px; text-align: center; }
+.comparison-row .label-sub { font-size: 0.7rem; color: #999; margin-bottom: 8px; }
+
+/* 青(Before)と赤(After)の数値 */
+.comparison-row .before-val { color: #0055aa; font-size: 1.8rem; font-weight: 700; line-height: 1; }
+.comparison-row .after-val { color: #d9534f; font-size: 2.8rem; font-weight: 900; line-height: 1; }
+.comparison-row .arrow-sign { color: #ccc; margin-top: 15px; }
+
+.comparison-row .case-label { flex: 1; font-size: 1.25rem; font-weight: bold; border-left: 3px solid #0055aa; padding-left: 18px; }
+
+@media (max-width: 768px) {
+  .comparison-row { flex-wrap: wrap; }
+  .comparison-row .case-label { width: 100%; border-left: none; border-top: 1px solid #eee; padding-top: 15px; }
+}
+
 /* ==========================================================================
    6. サービス・料金表
 ========================================================================== */
