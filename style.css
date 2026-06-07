@@ -573,6 +573,47 @@ footer::after {
 }
 
 /* ==========================================================================
+   お試しパック（featured）を最優先で引き立たせる設定
+   ※元の !important を上書きするために、こちらも !important を使用します
+   ========================================================================== */
+
+/* 1. カード全体の枠線と立体感 */
+.price-card.featured {
+  border: 2px solid #0055aa !important; /* メインカラーの太枠で囲む */
+  box-shadow: 0 4px 15px rgba(0, 85, 170, 0.15) !important; /* ほんのり青く光る影 */
+  position: relative;
+}
+
+/* 2. 「イチオシ！」のラベルを右上に配置 */
+.price-card.featured::after {
+  content: "お試しプラン";
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #ff9900;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 3px 10px;
+  border-radius: 3px;
+  letter-spacing: 1px;
+}
+
+/* 3. ボタンをパッと目を引くメインカラーの「塗り潰し」に変える */
+.price-card.featured .price-toggle-btn {
+  background: #0055aa !important; /* 青塗りに変更 */
+  color: #ffffff !important;      /* 文字を白に */
+  font-weight: bold !important;
+  box-shadow: 0 2px 5px rgba(0, 85, 170, 0.2);
+}
+
+/* 4. アコーディオンを開いた中身の価格を目立たせる */
+.price-card.featured .price-value {
+  color: #ff4d4d !important; /* 5万円を赤字にして価格のインパクトを強化 */
+  font-size: 1.8rem !important; /* 文字を一回り大きく */
+}
+
+/* ==========================================================================
    7. その他 (2カラム・動画・ブレイク画像)
 ========================================================================== */
 .two-col {
