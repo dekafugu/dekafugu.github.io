@@ -472,11 +472,6 @@ details.accordion-node p {
   display: none;
 }
 
-/* ── IT導入に壁を感じている企業様へ の焦点合わせアニメーション ── */
-.section-heading.focus-fade {
-  animation: lensFocus 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
 @keyframes lensFocus {
   0% {
     filter: blur(12px);
@@ -492,6 +487,6 @@ details.accordion-node p {
 
 /* 冒頭の見出し専用の大きめ＆フォーカスアニメーション設定 */
 .hero-heading-large {
-  font-size: clamp(1.6rem, 3.5vw, 3.4rem) !important;
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem) !important;
   animation: lensFocus 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
