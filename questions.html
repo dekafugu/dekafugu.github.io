@@ -15,6 +15,68 @@
   
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="favicon.ico">
+
+  <style>
+    /* =========================================================
+       Q&A（campaign.html の .cp-qa と同じデザイン）
+       ※ style.css に移せば両ページで共通化できるよ
+       ========================================================= */
+
+    /* ---------- 分野ジャンプ ---------- */
+    .qa-index { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 56px; }
+    .qa-index a {
+      font-size: 0.88rem;
+      color: var(--ink);
+      background: var(--paper-deep);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 8px 14px;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+    .qa-index a:hover { border-color: var(--teal); color: var(--teal); }
+
+    /* ---------- 分野ごとのブロック ---------- */
+    .qa-section { scroll-margin-top: 80px; margin-bottom: 56px; }
+    .qa-section .eyebrow-mono {
+      display: block;
+      font-family: 'SFMono-Regular', Consolas, monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: var(--teal);
+      margin-bottom: 4px;
+    }
+    .qa-h { font-size: 1.5rem; margin-bottom: 18px; }
+
+    /* ---------- Q&A本体 ---------- */
+    .cp-qa { border-top: 1px solid var(--line); }
+    .cp-qa-item { padding: 22px 0; border-bottom: 1px solid var(--line); }
+    .cp-qa-item dt,
+    .cp-qa-item dd {
+      display: grid;
+      grid-template-columns: 32px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+    .cp-qa-item dt { margin-bottom: 12px; }
+    .cp-qa-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Georgia, serif;
+      font-weight: 700;
+      font-size: 1rem;
+      line-height: 1;
+    }
+    .cp-qa-item dt .cp-qa-mark { background: var(--teal); color: var(--paper); }
+    .cp-qa-item dd .cp-qa-mark { background: var(--paper); color: var(--teal); border: 1px solid var(--teal); }
+    .cp-qa-item dt > span:last-child { font-weight: bold; color: var(--ink); font-size: 1rem; line-height: 1.6; padding-top: 4px; }
+    .cp-qa-item dd > span:last-child { color: var(--ink-soft); font-size: 0.95rem; line-height: 1.85; padding-top: 4px; }
+    .cp-qa-item .qa-p { display: block; margin-top: 10px; }
+    .cp-qa-item a { color: var(--teal); text-decoration: underline; }
+  </style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -52,103 +114,117 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </p>
   </div>
 
-  <!-- Q&A アコーディオンリスト -->
-  <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 40px;">
+  <!-- 分野ジャンプ -->
+  <nav class="qa-index" aria-label="Q&Aの分野">
+    <a href="#qa-business">オメテックについて</a>
+    <a href="#qa-request">ご相談・ご依頼</a>
+    <a href="#qa-price">料金・お支払い</a>
+    <a href="#qa-support">導入後のサポート</a>
+  </nav>
 
-    <details class="accordion-node" style="background: var(--paper-deep); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 24px;">
-      <summary class="pull" style="font-size: 1.1rem; color: var(--ink); font-weight: bold; cursor: pointer; padding-left: 10px; border-left: 4px solid var(--teal, #007791); list-style: none; font-style: normal;">
-        オメテックは法人ですか？
-      </summary>
-      <p style="font-size: 0.98rem; color: var(--ink-soft); line-height: 1.7; margin-top: 16px; margin-bottom: 0; padding-top: 12px; border-top: 1px solid var(--line); font-style: normal;">
-        いいえ、オメテックは個人事業として運営しています。法人ではありませんが、その分フットワークの軽さや、お客様に寄り添った柔軟でスピーディーな対応を大切にしています。
-      </p>
-    </details>
+  <!-- ===================== オメテックについて ===================== -->
+  <section class="qa-section" id="qa-business">
+    <span class="eyebrow-mono">ABOUT</span>
+    <h2 class="display qa-h">オメテックについて</h2>
+    <div class="cp-qa">
 
-    <details class="accordion-node" style="background: var(--paper-deep); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 24px;">
-      <summary class="pull" style="font-size: 1.1rem; color: var(--ink); font-weight: bold; cursor: pointer; padding-left: 10px; border-left: 4px solid var(--teal, #007791); list-style: none; font-style: normal;">
-        適格請求書発行事業者ですか？
-      </summary>
-      <p style="font-size: 0.98rem; color: var(--ink-soft); line-height: 1.7; margin-top: 16px; margin-bottom: 0; padding-top: 12px; border-top: 1px solid var(--line); font-style: normal;">
-        はい、適格請求書発行事業者です。登録番号はT3810948758050です。
-      </p>
-    </details>
+      <dl class="cp-qa-item">
+        <dt><span class="cp-qa-mark" aria-hidden="true">Q</span><span>オメテックは法人ですか？</span></dt>
+        <dd><span class="cp-qa-mark" aria-hidden="true">A</span><span>いいえ、オメテックは個人事業として運営しています。法人ではありませんが、その分フットワークの軽さや、お客様に寄り添った柔軟でスピーディーな対応を大切にしています。</span></dd>
+      </dl>
 
-    <details class="accordion-node" style="background: var(--paper-deep); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 24px;">
-      <summary class="pull" style="font-size: 1.1rem; color: var(--ink); font-weight: bold; cursor: pointer; padding-left: 10px; border-left: 4px solid var(--teal, #007791); list-style: none; font-style: normal;">
-        お送り先の住所はどこですか？
-      </summary>
-      <p style="font-size: 0.98rem; color: var(--ink-soft); line-height: 1.7; margin-top: 16px; margin-bottom: 0; padding-top: 12px; border-top: 1px solid var(--line); font-style: normal;">
-        書類等の送付先住所につきましては、お客様ごとに個別に案内しております。
-      </p>
-    </details>
+      <dl class="cp-qa-item">
+        <dt><span class="cp-qa-mark" aria-hidden="true">Q</span><span>適格請求書発行事業者ですか？</span></dt>
+        <dd><span class="cp-qa-mark" aria-hidden="true">A</span><span>はい、適格請求書発行事業者です。登録番号はT3810948758050です。</span></dd>
+      </dl>
 
-    <details class="accordion-node" style="background: var(--paper-deep); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 24px;">
-      <summary class="pull" style="font-size: 1.1rem; color: var(--ink); font-weight: bold; cursor: pointer; padding-left: 10px; border-left: 4px solid var(--teal, #007791); list-style: none; font-style: normal;">
-        料金の目安を教えてください。
-      </summary>
-      <p style="font-size: 0.98rem; color: var(--ink-soft); line-height: 1.7; margin-top: 16px; margin-bottom: 0; padding-top: 12px; border-top: 1px solid var(--line); font-style: normal;">
-        例えば、温度センサーを4か所に設置してダッシュボードで温度を一覧できるようなシステムの場合、10万円程度での導入が可能です。
-      </p>
-    </details>
+      <dl class="cp-qa-item">
+        <dt><span class="cp-qa-mark" aria-hidden="true">Q</span><span>書類の送付先住所はどこですか？</span></dt>
+        <dd><span class="cp-qa-mark" aria-hidden="true">A</span><span>書類等の送付先住所につきましては、お客様ごとに個別にご案内しております。</span></dd>
+      </dl>
 
-    <details class="accordion-node" style="background: var(--paper-deep); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 24px;">
-      <summary class="pull" style="font-size: 1.1rem; color: var(--ink); font-weight: bold; cursor: pointer; padding-left: 10px; border-left: 4px solid var(--teal, #007791); list-style: none; font-style: normal;">
-        なぜ低価格での導入が可能なのでしょうか？
-      </summary>
-      <p style="font-size: 0.98rem; color: var(--ink-soft); line-height: 1.7; margin-top: 16px; margin-bottom: 0; padding-top: 12px; border-top: 1px solid var(--line); font-style: normal;">
-        低価格で高機能な、『マイコン（マイクロ・コントローラー）』を用いてシステムを開発しているからです。<br>
-        一般的な自動化ラインには、工業用の過酷な環境に耐えうる高価な機器（PLCなど）が用いられますが、当方では『マイコン』を用いてシステムを開発しています。
-        『マイコン』は工業用の専用機に比べると環境耐性や堅牢さの面で劣りますが、一般的な室内や通常の設置環境であれば十分な安定性を発揮するうえ、拡張性が非常に高く、あらゆるシステムを作り上げることができます。
-        当然、安物だからすぐに壊れる、エラーが多い、といったこと一切ありませんのでご安心ください。
-      </p>
-    </details>
+    </div>
+  </section>
 
-    <details class="accordion-node" style="background: var(--paper-deep); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 24px;">
-      <summary class="pull" style="font-size: 1.1rem; color: var(--ink); font-weight: bold; cursor: pointer; padding-left: 10px; border-left: 4px solid var(--teal, #007791); list-style: none; font-style: normal;">
-        補助金を利用しての導入は可能ですか？
-      </summary>
-      <p style="font-size: 0.98rem; color: var(--ink-soft); line-height: 1.7; margin-top: 16px; margin-bottom: 0; padding-top: 12px; border-top: 1px solid var(--line); font-style: normal;">
-        補助の対象には厳格な要件や制限が設けられている場合があるため、ご検討中の補助金がございましたら必ず事前にご相談ください。例えば、「デジタル化・AI導入補助金」や「中小企業省力化投資補助金」などは、事前に登録された特定のパッケージ製品等が対象となるため、当方の各サービスは対象外となります。
-      </p>
-    </details>
+  <!-- ===================== ご相談・ご依頼 ===================== -->
+  <section class="qa-section" id="qa-request">
+    <span class="eyebrow-mono">REQUEST</span>
+    <h2 class="display qa-h">ご相談・ご依頼について</h2>
+    <div class="cp-qa">
 
-    <details class="accordion-node" style="background: var(--paper-deep); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 24px;">
-      <summary class="pull" style="font-size: 1.1rem; color: var(--ink); font-weight: bold; cursor: pointer; padding-left: 10px; border-left: 4px solid var(--teal, #007791); list-style: none; font-style: normal;">
-        支払方法を教えてください。
-      </summary>
-      <p style="font-size: 0.98rem; color: var(--ink-soft); line-height: 1.7; margin-top: 16px; margin-bottom: 0; padding-top: 12px; border-top: 1px solid var(--line); font-style: normal;">
-        銀行振込をお願いしております。ご入金の時期につきましては、月末や翌月払いなど柔軟に対応可能ですので、お気軽にご相談ください。
-      </p>
-    </details>
+      <dl class="cp-qa-item">
+        <dt><span class="cp-qa-mark" aria-hidden="true">Q</span><span>相談だけでも費用はかかりますか？</span></dt>
+        <dd><span class="cp-qa-mark" aria-hidden="true">A</span><span>初回の技術相談は無料です。「こんなことはできる？」といった段階のご相談でも、お気軽に<a href="contact.html">お問い合わせ</a>ください。</span></dd>
+      </dl>
 
-    <details class="accordion-node" style="background: var(--paper-deep); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 24px;">
-      <summary class="pull" style="font-size: 1.1rem; color: var(--ink); font-weight: bold; cursor: pointer; padding-left: 10px; border-left: 4px solid var(--teal, #007791); list-style: none; font-style: normal;">
-        青梅市以外や都外といった遠方からの依頼も可能ですか？
-      </summary>
-      <p style="font-size: 0.98rem; color: var(--ink-soft); line-height: 1.7; margin-top: 16px; margin-bottom: 0; padding-top: 12px; border-top: 1px solid var(--line); font-style: normal;">
-        可能ですが、サービスの性質上、現場での調整作業が何度か必要となります。青梅市から20km圏外を超える場合は、出張費等の割増料金を頂戴する場合があります。
-      </p>
-    </details>
+      <dl class="cp-qa-item">
+        <dt><span class="cp-qa-mark" aria-hidden="true">Q</span><span>業種や会社の規模に制限はありますか？また、個人でも依頼できますか？</span></dt>
+        <dd><span class="cp-qa-mark" aria-hidden="true">A</span><span>業種や規模に関わりなく、全てのお悩みに対応いたします。ただし、個人のお客様につきましては、お取引のあるお客様や関係者様からのご紹介がある場合に限らせていただいております。</span></dd>
+      </dl>
 
-    <details class="accordion-node" style="background: var(--paper-deep); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 24px;">
-      <summary class="pull" style="font-size: 1.1rem; color: var(--ink); font-weight: bold; cursor: pointer; padding-left: 10px; border-left: 4px solid var(--teal, #007791); list-style: none; font-style: normal;">
-        業種や会社の規模に制限はありますか？また、個人でも依頼できますか？
-      </summary>
-      <p style="font-size: 0.98rem; color: var(--ink-soft); line-height: 1.7; margin-top: 16px; margin-bottom: 0; padding-top: 12px; border-top: 1px solid var(--line); font-style: normal;">
-        業種や規模に関わりなく、全てのお悩みに対応いたします。ただし、個人のお客様につきましては、お取引のあるお客様や関係者様からのご紹介がある場合に限らせていただいております。
-      </p>
-    </details>
+      <dl class="cp-qa-item">
+        <dt><span class="cp-qa-mark" aria-hidden="true">Q</span><span>青梅市以外や都外といった遠方からの依頼も可能ですか？</span></dt>
+        <dd><span class="cp-qa-mark" aria-hidden="true">A</span><span>可能ですが、サービスの性質上、現場での調整作業が何度か必要となります。青梅市から20kmを超える場合は、出張費等の割増料金を頂戴する場合があります。</span></dd>
+      </dl>
 
-    <details class="accordion-node" style="background: var(--paper-deep); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 24px;">
-      <summary class="pull" style="font-size: 1.1rem; color: var(--ink); font-weight: bold; cursor: pointer; padding-left: 10px; border-left: 4px solid var(--teal, #007791); list-style: none; font-style: normal;">
-        納入されたシステムのアフターサポートについて教えてください。
-      </summary>
-      <p style="font-size: 0.98rem; color: var(--ink-soft); line-height: 1.7; margin-top: 16px; margin-bottom: 0; padding-top: 12px; border-top: 1px solid var(--line); font-style: normal;">
-        センサーやデバイスの初期不良・故障につきましては、無償で交換対応させていただきます。ただし、お客様都合での故障の場合には有償での交換対応とさせていただきます。使用方法等のお問い合わせはいつでも無料にてご対応いたします。
-      </p>
-    </details>
+      <dl class="cp-qa-item">
+        <dt><span class="cp-qa-mark" aria-hidden="true">Q</span><span>秘密保持契約（NDA）を結ぶことはできますか？</span></dt>
+        <dd><span class="cp-qa-mark" aria-hidden="true">A</span><span>はい、ご希望に応じて秘密保持契約を締結いたします。現場の情報や図面などを安心してお見せいただけるよう、事前にお申し付けください。</span></dd>
+      </dl>
 
-  </div>
+      <dl class="cp-qa-item">
+        <dt><span class="cp-qa-mark" aria-hidden="true">Q</span><span>いきなり導入するのは不安です。お試しはできますか？</span></dt>
+        <dd><span class="cp-qa-mark" aria-hidden="true">A</span><span>「技術検証（PoC）代行」をご利用ください。導入をご検討中のシステムが、貴社の現場で実際に機能するかどうかを事前に検証いたします。効果をご確認いただいたうえで、本格的な導入をご判断いただけます。詳しくは<a href="service.html">サービス例</a>をご覧ください。
+          <span class="qa-p">また、キャンペーン期間中は、IoTデバイスを2〜3週間お貸しする「3万円で見える化お試しサービス」もご利用いただけます。詳しくは<a href="campaign.html">キャンペーンページ</a>をご覧ください。</span></span></dd>
+      </dl>
+
+    </div>
+  </section>
+
+  <!-- ===================== 料金・お支払い ===================== -->
+  <section class="qa-section" id="qa-price">
+    <span class="eyebrow-mono">PRICE</span>
+    <h2 class="display qa-h">料金・お支払いについて</h2>
+    <div class="cp-qa">
+
+      <dl class="cp-qa-item">
+        <dt><span class="cp-qa-mark" aria-hidden="true">Q</span><span>料金の目安を教えてください。</span></dt>
+        <dd><span class="cp-qa-mark" aria-hidden="true">A</span><span>例えば、温度センサーを3か所に設置してダッシュボードで温度を一覧できるようなシステムの場合、20万円程度での導入が可能です。</span></dd>
+      </dl>
+
+      <dl class="cp-qa-item">
+        <dt><span class="cp-qa-mark" aria-hidden="true">Q</span><span>なぜ低価格での導入が可能なのでしょうか？</span></dt>
+        <dd><span class="cp-qa-mark" aria-hidden="true">A</span><span>低価格で高機能な『マイコン（マイクロ・コントローラー）』を用いてシステムを開発しているからです。
+          <span class="qa-p">一般的な自動化ラインには、工業用の過酷な環境に耐えうる高価な機器（PLCなど）が用いられますが、当方では『マイコン』を用いてシステムを開発しています。『マイコン』は工業用の専用機に比べると環境耐性や堅牢さの面で劣りますが、一般的な室内や通常の設置環境であれば十分な安定性を発揮するうえ、拡張性が非常に高く、あらゆるシステムを作り上げることができます。</span>
+          <span class="qa-p">当然、安物だからすぐに壊れる、エラーが多い、といったことは一切ありませんのでご安心ください。</span></span></dd>
+      </dl>
+
+      <dl class="cp-qa-item">
+        <dt><span class="cp-qa-mark" aria-hidden="true">Q</span><span>補助金を利用しての導入は可能ですか？</span></dt>
+        <dd><span class="cp-qa-mark" aria-hidden="true">A</span><span>補助の対象には厳格な要件や制限が設けられている場合があるため、ご検討中の補助金がございましたら必ず事前にご相談ください。例えば、「デジタル化・AI導入補助金」や「中小企業省力化投資補助金」などは、事前に登録された特定のパッケージ製品等が対象となるため、当方の各サービスは対象外となります。</span></dd>
+      </dl>
+
+      <dl class="cp-qa-item">
+        <dt><span class="cp-qa-mark" aria-hidden="true">Q</span><span>支払方法を教えてください。</span></dt>
+        <dd><span class="cp-qa-mark" aria-hidden="true">A</span><span>銀行振込をお願いしております。ご入金の時期につきましては、月末や翌月払いなど柔軟に対応可能ですので、お気軽にご相談ください。</span></dd>
+      </dl>
+
+    </div>
+  </section>
+
+  <!-- ===================== 導入後のサポート ===================== -->
+  <section class="qa-section" id="qa-support">
+    <span class="eyebrow-mono">SUPPORT</span>
+    <h2 class="display qa-h">導入後のサポートについて</h2>
+    <div class="cp-qa">
+
+      <dl class="cp-qa-item">
+        <dt><span class="cp-qa-mark" aria-hidden="true">Q</span><span>納入されたシステムのアフターサポートについて教えてください。</span></dt>
+        <dd><span class="cp-qa-mark" aria-hidden="true">A</span><span>センサーやデバイスの初期不良・故障（納入後1か月まで）につきましては、無償で交換対応させていただきます。ただし、お客様都合での故障の場合には有償での交換対応とさせていただきます。使用方法等のお問い合わせはいつでも無料にてご対応いたします。</span></dd>
+      </dl>
+
+    </div>
+  </section>
 
 </article>
 
